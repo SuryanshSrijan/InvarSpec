@@ -1,4 +1,5 @@
 from pycparser import c_parser, c_ast
+import argparse
 
 class CFGNode:
     def __init__(self, id, label=None):
@@ -296,9 +297,10 @@ class CFGBuilder(c_ast.NodeVisitor):
             return f"{self.get_expr_str(expr.name)}[{self.get_expr_str(expr.subscript)}]"
         return str(expr)
     
-    def print_cfg(self):
-        for node in self.cfg:
-            print(node)
+    def print_cfg(self, file):
+        with open(file, 'w') as f:
+            for node in self.cfg:
+                f.write(f"{node}\n")
             
     def isSquashInsn(self, node):
         if not isinstance(node, CFGNode) or not node.label:
@@ -331,57 +333,43 @@ class CFGBuilder(c_ast.NodeVisitor):
 
 
 def main():
-    # Example C code to parse
-    code = """
-    int main() {
-        int x = 0;
-        
-        while (x < 10) {
-            x++;
-        }
-        
-        for (int i = 0; i < 5; i++) {
-            if (i % 2 == 0) {
-                continue;
-            }
-            x += i;
-        }
-        
-        do {
-            x--;
-        } while (x > 5);
-        
-        switch (x) {
-            case 1:
-                x = 10;
-                break;
-            case 2:
-                x = 20;
-            case 3:
-                x += 5;
-                break;
-            default:
-                x = 0;
-        }
-        
-        return x;
-    }
-    """
+    
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument("--file", help="Path to the C file to parse")
+    argparser.add_argument("--show-cfg", action="store_true", help="Show CFG")
+    argparser.add_argument("--show-ast", action="store_true", help="Show AST")
+    args = argparser.parse_args()
+    
+    if args.file:
+        with open(args.file, 'r') as f:
+            code = f.read()
+    else:
+        assert False, "No C file provided. Use --file to specify a C file."
+
+    ast_file = args.file + ".ast"
+    cfg_file = args.file + ".cfg"
+    ss_file = args.file + ".ss"
 
     parser = c_parser.CParser()
     ast = parser.parse(code)
 
     cfg_builder = CFGBuilder()
     cfg = cfg_builder.build(ast)
-    ast.show()
-    cfg_builder.print_cfg()
+    
+    if args.show_ast:
+        with open(ast_file, 'w') as f:
+            ast.show(buf=f)
+    
+    if args.show_cfg:
+        cfg_builder.print_cfg(cfg_file)
     
     cfg = cfg_builder.build(ast)
     print("CFG Generated")
-    for node in cfg:
-        # if cfg_builder.isSquashInsn(node):
-        ss = cfg_builder.genSS(node, cfg)
-        print(f"Safe Set for {node.label}: {ss}\n")
+    
+    with open(ss_file, 'w') as f:
+        for node in cfg:
+            ss = cfg_builder.genSS(node, cfg)
+            f.write(f"Safe Set for {node.label}: {ss}\n")
 
     
 if __name__ == "__main__":
