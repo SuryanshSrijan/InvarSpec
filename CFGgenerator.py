@@ -364,10 +364,11 @@ def main():
         cfg_builder.print_cfg(cfg_file)
     
     cfg = cfg_builder.build(ast)
-    print("CFG Generated")
     
     with open(ss_file, 'w') as f:
-        for node in cfg:
+        for i, node in enumerate(cfg):
+            if i > len(cfg)/2:
+                break
             ss = cfg_builder.genSS(node, cfg)
             f.write(f"Safe Set for {node.label}: {ss}\n")
 
