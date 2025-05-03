@@ -1,0 +1,3850 @@
+**FUNC: sym.imp.__cxa_atexit
+**BEGIN: CFG
+4576 [] endbr64
+4580 [4576] bnd jmp qword [reloc.__cxa_atexit]
+**END: CFG
+
+**FUNC: sym.imp.__stack_chk_fail
+**BEGIN: CFG
+4656 [] endbr64
+4660 [4656] bnd jmp qword [reloc.__stack_chk_fail]
+**END: CFG
+
+**FUNC: sym.imp.memmove
+**BEGIN: CFG
+4688 [] endbr64
+4692 [4688] bnd jmp qword [reloc.memmove]
+**END: CFG
+
+**FUNC: sym.imp._Unwind_Resume
+**BEGIN: CFG
+4720 [] endbr64
+4724 [4720] bnd jmp qword [reloc._Unwind_Resume]
+**END: CFG
+
+**FUNC: entry0
+**BEGIN: CFG
+4736 [] endbr64
+4740 [4736] xor ebp, ebp
+4742 [4740] mov r9, rdx
+4745 [4742] pop rsi
+4746 [4745] mov rdx, rsp
+4749 [4746] and rsp, 0xfffffffffffffff0
+4753 [4749] push rax
+4754 [4753] push rsp
+4755 [4754] xor r8d, r8d
+4758 [4755] xor ecx, ecx
+4760 [4758] lea rdi, [main]
+4767 [4760] call qword [reloc.__libc_start_main]
+**END: CFG
+
+**FUNC: sym.deregister_tm_clones
+**BEGIN: CFG
+4784 [] lea rdi, [loc._edata]
+4791 [4784] lea rax, [loc._edata]
+4798 [4791] cmp rax, rdi
+4801 [4798] je 0x12d8
+4803 [4801] mov rax, qword [reloc._ITM_deregisterTMCloneTable]
+4810 [4803] test rax, rax
+4813 [4810] je 0x12d8
+4815 [4813] jmp rax
+4824 [4815] ret
+**END: CFG
+
+**FUNC: sym.register_tm_clones
+**BEGIN: CFG
+4832 [] lea rdi, [loc._edata]
+4839 [4832] lea rsi, [loc._edata]
+4846 [4839] sub rsi, rdi
+4849 [4846] mov rax, rsi
+4852 [4849] shr rsi, 0x3f
+4856 [4852] sar rax, 3
+4860 [4856] add rsi, rax
+4863 [4860] sar rsi, 1
+4866 [4863] je 0x1318
+4868 [4866] mov rax, qword [reloc._ITM_registerTMCloneTable]
+4875 [4868] test rax, rax
+4878 [4875] je 0x1318
+4880 [4878] jmp rax
+4888 [4880] ret
+**END: CFG
+
+**FUNC: entry.fini0
+**BEGIN: CFG
+4896 [] endbr64
+4900 [4896] cmp byte [obj.completed.0], 0
+4907 [4900] jne 0x1358
+4909 [4907] push rbp
+4910 [4909] cmp qword [reloc.__cxa_finalize], 0
+4918 [4910] mov rbp, rsp
+4921 [4918] je 0x1347
+4923 [4921] mov rdi, qword [obj.__dso_handle]
+4930 [4923] call fcn.00001150
+4935 [4930] call sym.deregister_tm_clones
+4940 [4935] mov byte [obj.completed.0], 1
+4947 [4940] pop rbp
+4948 [4947] ret
+4952 [4948] ret
+**END: CFG
+
+**FUNC: fcn.00001150
+**BEGIN: CFG
+4432 [] endbr64
+4436 [4432] bnd jmp qword [reloc.__cxa_finalize]
+**END: CFG
+
+**FUNC: entry.init0
+**BEGIN: CFG
+4960 [] endbr64
+4964 [4960] jmp sym.register_tm_clones
+**END: CFG
+
+**FUNC: sym.solve__::lambda_int__int_1::operator___int__int__const
+**BEGIN: CFG
+5360 [] push rbp
+5361 [5360] mov rbp, rsp
+5364 [5361] push rbx
+5365 [5364] sub rsp, 0xf8
+5372 [5365] mov qword [rbp - 0xe8], rdi
+5379 [5372] mov qword [rbp - 0xf0], rsi
+5386 [5379] mov dword [rbp - 0xf4], edx
+5392 [5386] mov dword [rbp - 0xf8], ecx
+5398 [5392] mov rax, qword fs:[0x28]
+5407 [5398] mov qword [rbp - 0x18], rax
+5411 [5407] xor eax, eax
+5413 [5411] mov rax, qword [rbp - 0xf0]
+5420 [5413] mov rax, qword [rax + 8]
+5424 [5420] mov qword [rbp - 0xa0], rax
+5431 [5424] mov rax, qword [rbp - 0xf0]
+5438 [5431] mov rax, qword [rax + 8]
+5442 [5438] add rax, 1
+5446 [5442] mov r8, rax
+5449 [5446] mov r9d, 0
+5455 [5449] imul rdx, r9, 0xc0
+5462 [5455] imul rax, r8, 0
+5466 [5462] lea rcx, [rdx + rax]
+5470 [5466] mov eax, 0xc0
+5475 [5470] mul r8
+5478 [5475] add rcx, rdx
+5481 [5478] mov rdx, rcx
+5484 [5481] mov rax, qword [rbp - 0xf0]
+5491 [5484] mov rax, qword [rax + 8]
+5495 [5491] lea rdx, [rax + 1]
+5499 [5495] mov rax, rdx
+5502 [5499] add rax, rax
+5505 [5502] add rax, rdx
+5508 [5505] shl rax, 3
+5512 [5508] mov rax, qword [rbp - 0xf0]
+5519 [5512] mov rcx, qword [rax]
+5522 [5519] mov eax, dword [rbp - 0xf4]
+5528 [5522] movsxd rdx, eax
+5531 [5528] mov rax, rdx
+5534 [5531] add rax, rax
+5537 [5534] add rax, rdx
+5540 [5537] shl rax, 3
+5544 [5540] add rax, rcx
+5547 [5544] mov rdi, rax
+5550 [5547] call method.std::vector_int__std::allocator_int___.size___const
+5555 [5550] mov dword [rbp - 0xd8], eax
+5561 [5555] lea rax, [rbp - 0x30]
+5565 [5561] mov rdi, rax
+5568 [5565] call method.std::allocator_long_long_.allocator__
+5573 [5568] mov eax, dword [rbp - 0xd8]
+5579 [5573] movsxd rcx, eax
+5582 [5579] lea rdx, [rbp - 0x30]
+5586 [5582] lea rax, [rbp - 0x90]
+5593 [5586] mov rsi, rcx
+5596 [5593] mov rdi, rax
+5599 [5596] call method.std::vector_long_long__std::allocator_long_long___.vector_unsigned_long__std::allocator_long_long__const_
+5604 [5599] lea rax, [rbp - 0x30]
+5608 [5604] mov rdi, rax
+5611 [5608] call fcn.00002ae4
+5616 [5611] lea rax, [rbp - 0x30]
+5620 [5616] mov rdi, rax
+5623 [5620] call method.std::allocator_long_long_.allocator__
+5628 [5623] mov eax, dword [rbp - 0xd8]
+5634 [5628] movsxd rcx, eax
+5637 [5634] lea rdx, [rbp - 0x30]
+5641 [5637] lea rax, [rbp - 0x70]
+5645 [5641] mov rsi, rcx
+5648 [5645] mov rdi, rax
+5651 [5648] call method.std::vector_long_long__std::allocator_long_long___.vector_unsigned_long__std::allocator_long_long__const_
+5656 [5651] lea rax, [rbp - 0x30]
+5660 [5656] mov rdi, rax
+5663 [5660] call fcn.00002ae4
+5668 [5663] lea rax, [rbp - 0x30]
+5672 [5668] mov rdi, rax
+5675 [5672] call method.std::allocator_long_long_.allocator__
+5680 [5675] mov eax, dword [rbp - 0xd8]
+5686 [5680] movsxd rcx, eax
+5689 [5686] lea rdx, [rbp - 0x30]
+5693 [5689] lea rax, [rbp - 0x50]
+5697 [5693] mov rsi, rcx
+5700 [5697] mov rdi, rax
+5703 [5700] call method.std::vector_long_long__std::allocator_long_long___.vector_unsigned_long__std::allocator_long_long__const_
+5708 [5703] lea rax, [rbp - 0x30]
+5712 [5708] mov rdi, rax
+5715 [5712] call fcn.00002ae4
+5720 [5715] mov dword [rbp - 0xdc], 0
+5730 [5720] mov qword [rbp - 0xc0], 1
+5741 [5730] mov qword [rbp - 0xb8], 0
+5752 [5741] mov qword [rbp - 0xb0], 0
+5763 [5752] mov qword [rbp - 0xa8], 0
+5774 [5763] mov rax, qword [rbp - 0xf0]
+5781 [5774] mov rcx, qword [rax]
+5784 [5781] mov eax, dword [rbp - 0xf4]
+5790 [5784] movsxd rdx, eax
+5793 [5790] mov rax, rdx
+5796 [5793] add rax, rax
+5799 [5796] add rax, rdx
+5802 [5799] shl rax, 3
+5806 [5802] add rax, rcx
+5809 [5806] mov qword [rbp - 0x98], rax
+5816 [5809] mov rax, qword [rbp - 0x98]
+5823 [5816] mov rdi, rax
+5826 [5823] call method.std::vector_int__std::allocator_int___.begin__
+5831 [5826] mov qword [rbp - 0xd0], rax
+5838 [5831] mov rax, qword [rbp - 0x98]
+5845 [5838] mov rdi, rax
+5848 [5845] call method.std::vector_int__std::allocator_int___.end__
+5853 [5848] mov qword [rbp - 0xc8], rax
+5860 [5853] jmp 0x1a36
+5865 [] lea rax, [rbp - 0xd0]
+5872 [5865] mov rdi, rax
+5875 [5872] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.operator___const
+5880 [5875] mov eax, dword [rax]
+5882 [5880] mov dword [rbp - 0xd4], eax
+5888 [5882] mov eax, dword [rbp - 0xd4]
+5894 [5888] cmp eax, dword [rbp - 0xf8]
+5900 [5894] je 0x1a26
+5906 [5900] mov rax, qword [rbp - 0xf0]
+5913 [5906] mov rsi, qword [rax + 0x10]
+5917 [5913] lea rax, [rbp - 0x30]
+5921 [5917] mov ecx, dword [rbp - 0xf4]
+5927 [5921] mov edx, dword [rbp - 0xd4]
+5933 [5927] mov rdi, rax
+5936 [5933] call method.std.function_my__int__int__::operator___int__int__const
+5941 [5936] mov eax, dword [rbp - 0xd4]
+5947 [5941] mov esi, eax
+5949 [5947] lea rax, [obj.std::cout]
+5956 [5949] mov rdi, rax
+5959 [5956] call sym.imp.std::ostream::operator___int_
+5964 [5959] mov rdx, rax
+5967 [5964] lea rax, [0x00004060]
+5974 [5967] mov rsi, rax
+5977 [5974] mov rdi, rdx
+5980 [5977] call method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+5985 [5980] mov rdx, rax
+5988 [5985] mov eax, dword [rbp - 0xf4]
+5994 [5988] mov esi, eax
+5996 [5994] mov rdi, rdx
+5999 [5996] call sym.imp.std::ostream::operator___int_
+6004 [5999] mov rdx, rax
+6007 [6004] lea rax, [0x00004060]
+6014 [6007] mov rsi, rax
+6017 [6014] mov rdi, rdx
+6020 [6017] call method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+6025 [6020] mov rdx, rax
+6028 [6025] mov rax, qword [rbp - 0x30]
+6032 [6028] mov rsi, rax
+6035 [6032] mov rdi, rdx
+6038 [6035] call sym.imp.std::ostream::operator___long_long_
+6043 [6038] mov rdx, rax
+6046 [6043] lea rax, [0x00004060]
+6053 [6046] mov rsi, rax
+6056 [6053] mov rdi, rdx
+6059 [6056] call method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+6064 [6059] mov rdx, rax
+6067 [6064] mov rax, qword [rbp - 0x28]
+6071 [6067] mov rsi, rax
+6074 [6071] mov rdi, rdx
+6077 [6074] call sym.imp.std::ostream::operator___long_long_
+6082 [6077] mov rdx, rax
+6085 [6082] lea rax, [0x00004060]
+6092 [6085] mov rsi, rax
+6095 [6092] mov rdi, rdx
+6098 [6095] call method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+6103 [6098] mov rdx, rax
+6106 [6103] mov rax, qword [rbp - 0x20]
+6110 [6106] mov rsi, rax
+6113 [6110] mov rdi, rdx
+6116 [6113] call sym.imp.std::ostream::operator___long_long_
+6121 [6116] mov rdx, qword [reloc.std::basic_ostream_char__std::char_traits_char____std::endl_char__std::char_traits_char____std::basic_ostream_char__std::char_traits_char____]
+6128 [6121] mov rsi, rdx
+6131 [6128] mov rdi, rax
+6134 [6131] call sym.imp.std::ostream::operator___std::ostream____std::ostream__
+6139 [6134] mov rbx, qword [rbp - 0x30]
+6143 [6139] mov eax, dword [rbp - 0xdc]
+6149 [6143] movsxd rdx, eax
+6152 [6149] lea rax, [rbp - 0x90]
+6159 [6152] mov rsi, rdx
+6162 [6159] mov rdi, rax
+6165 [6162] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6170 [6165] mov qword [rax], rbx
+6173 [6170] mov eax, dword [rbp - 0xdc]
+6179 [6173] movsxd rdx, eax
+6182 [6179] lea rax, [rbp - 0x90]
+6189 [6182] mov rsi, rdx
+6192 [6189] mov rdi, rax
+6195 [6192] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6200 [6195] mov rax, qword [rax]
+6203 [6200] imul rax, qword [rbp - 0xc0]
+6211 [6203] mov rcx, rax
+6214 [6211] movabs rdx, 0x226b9021d778331
+6224 [6214] mov rax, rcx
+6227 [6224] imul rdx
+6230 [6227] mov rax, rdx
+6233 [6230] sar rax, 0x17
+6237 [6233] mov rdx, rcx
+6240 [6237] sar rdx, 0x3f
+6244 [6240] sub rax, rdx
+6247 [6244] mov qword [rbp - 0xc0], rax
+6254 [6247] mov rax, qword [rbp - 0xc0]
+6261 [6254] imul rdx, rax, 0x3b800001
+6268 [6261] mov rax, rcx
+6271 [6268] sub rax, rdx
+6274 [6271] mov qword [rbp - 0xc0], rax
+6281 [6274] mov eax, dword [rbp - 0xdc]
+6287 [6281] movsxd rdx, eax
+6290 [6287] lea rax, [rbp - 0x90]
+6297 [6290] mov rsi, rdx
+6300 [6297] mov rdi, rax
+6303 [6300] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6308 [6303] mov rdx, qword [rax]
+6311 [6308] mov rax, qword [rbp - 0x28]
+6315 [6311] mov rsi, rdx
+6318 [6315] mov rdi, rax
+6321 [6318] call sym.mydiv_long_long__long_long_
+6326 [6321] mov rbx, rax
+6329 [6326] mov eax, dword [rbp - 0xdc]
+6335 [6329] movsxd rdx, eax
+6338 [6335] lea rax, [rbp - 0x70]
+6342 [6338] mov rsi, rdx
+6345 [6342] mov rdi, rax
+6348 [6345] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6353 [6348] mov qword [rax], rbx
+6356 [6353] mov eax, dword [rbp - 0xdc]
+6362 [6356] movsxd rdx, eax
+6365 [6362] lea rax, [rbp - 0x70]
+6369 [6365] mov rsi, rdx
+6372 [6369] mov rdi, rax
+6375 [6372] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6380 [6375] mov rax, qword [rax]
+6383 [6380] add qword [rbp - 0xb8], rax
+6390 [6383] cmp qword [rbp - 0xb8], 0x3b800000
+6401 [6390] jle 0x190e
+6403 [6401] sub qword [rbp - 0xb8], method.std::basic_ostream_char__std::char_traits_char____std::endl_char__std.char_traits_char____std::basic_ostream_char__std::char_traits_char____
+6414 [6403] mov eax, dword [rbp - 0xdc]
+6420 [6414] movsxd rdx, eax
+6423 [6420] lea rax, [rbp - 0x70]
+6427 [6423] mov rsi, rdx
+6430 [6427] mov rdi, rax
+6433 [6430] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6438 [6433] mov rbx, qword [rax]
+6441 [6438] mov eax, dword [rbp - 0xdc]
+6447 [6441] movsxd rdx, eax
+6450 [6447] lea rax, [rbp - 0x70]
+6454 [6450] mov rsi, rdx
+6457 [6454] mov rdi, rax
+6460 [6457] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6465 [6460] mov rax, qword [rax]
+6468 [6465] imul rbx, rax
+6472 [6468] mov rcx, rbx
+6475 [6472] movabs rdx, 0x226b9021d778331
+6485 [6475] mov rax, rcx
+6488 [6485] imul rdx
+6491 [6488] mov rax, rdx
+6494 [6491] sar rax, 0x17
+6498 [6494] mov rdx, rcx
+6501 [6498] sar rdx, 0x3f
+6505 [6501] sub rax, rdx
+6508 [6505] imul rdx, rax, 0x3b800001
+6515 [6508] mov rax, rcx
+6518 [6515] sub rax, rdx
+6521 [6518] add qword [rbp - 0xb0], rax
+6528 [6521] cmp qword [rbp - 0xb0], 0x3b800000
+6539 [6528] jle 0x1998
+6541 [6539] sub qword [rbp - 0xb0], method.std::basic_ostream_char__std::char_traits_char____std::endl_char__std.char_traits_char____std::basic_ostream_char__std::char_traits_char____
+6552 [6541] mov eax, dword [rbp - 0xdc]
+6558 [6552] movsxd rdx, eax
+6561 [6558] lea rax, [rbp - 0x90]
+6568 [6561] mov rsi, rdx
+6571 [6568] mov rdi, rax
+6574 [6571] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6579 [6574] mov rdx, qword [rax]
+6582 [6579] mov rax, qword [rbp - 0x20]
+6586 [6582] mov rsi, rdx
+6589 [6586] mov rdi, rax
+6592 [6589] call sym.mydiv_long_long__long_long_
+6597 [6592] mov rbx, rax
+6600 [6597] mov eax, dword [rbp - 0xdc]
+6606 [6600] movsxd rdx, eax
+6609 [6606] lea rax, [rbp - 0x50]
+6613 [6609] mov rsi, rdx
+6616 [6613] mov rdi, rax
+6619 [6616] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6624 [6619] mov qword [rax], rbx
+6627 [6624] mov eax, dword [rbp - 0xdc]
+6633 [6627] movsxd rdx, eax
+6636 [6633] lea rax, [rbp - 0x50]
+6640 [6636] mov rsi, rdx
+6643 [6640] mov rdi, rax
+6646 [6643] call method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+6651 [6646] mov rax, qword [rax]
+6654 [6651] add qword [rbp - 0xa8], rax
+6661 [6654] cmp qword [rbp - 0xa8], 0x3b800000
+6672 [6661] jle 0x1a1d
+6674 [6672] sub qword [rbp - 0xa8], method.std::basic_ostream_char__std::char_traits_char____std::endl_char__std.char_traits_char____std::basic_ostream_char__std::char_traits_char____
+6685 [6674] add dword [rbp - 0xdc], 1
+6692 [6685] jmp 0x1a27
+6694 [] nop
+6695 [6692 6694] lea rax, [rbp - 0xd0]
+6702 [6695] mov rdi, rax
+6705 [6702] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.operator__
+6710 [5860 6705] lea rdx, [rbp - 0xc8]
+6717 [6710] lea rax, [rbp - 0xd0]
+6724 [6717] mov rsi, rdx
+6727 [6724] mov rdi, rax
+6730 [6727] call method.bool___gnu_cxx::operator__int__std::vector_int__std.allocator_int________gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int______const____gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int______const_
+6735 [6730] test al, al
+6737 [6735] jne 0x16e9
+6743 [6737] mov rax, qword [rbp - 0xb8]
+6750 [6743] imul rax, rax
+6754 [6750] mov rcx, rax
+6757 [6754] movabs rdx, 0x226b9021d778331
+6767 [6757] mov rax, rcx
+6770 [6767] imul rdx
+6773 [6770] mov rax, rdx
+6776 [6773] sar rax, 0x17
+6780 [6776] mov rdx, rcx
+6783 [6780] sar rdx, 0x3f
+6787 [6783] sub rax, rdx
+6790 [6787] imul rdx, rax, 0x3b800001
+6797 [6790] mov rax, rcx
+6800 [6797] sub rax, rdx
+6803 [6800] sub rax, qword [rbp - 0xb0]
+6810 [6803] lea rcx, [rax + 0x3b800001]
+6817 [6810] movabs rdx, 0x226b9021d778331
+6827 [6817] mov rax, rcx
+6830 [6827] imul rdx
+6833 [6830] mov rax, rdx
+6836 [6833] sar rax, 0x17
+6840 [6836] mov rdx, rcx
+6843 [6840] sar rdx, 0x3f
+6847 [6843] sub rax, rdx
+6850 [6847] imul rdx, rax, 0x3b800001
+6857 [6850] mov rax, rcx
+6860 [6857] sub rax, rdx
+6863 [6860] mov esi, 2
+6868 [6863] mov rdi, rax
+6871 [6868] call sym.mydiv_long_long__long_long_
+6876 [6871] mov rdx, qword [rbp - 0xb8]
+6883 [6876] add rdx, rax
+6886 [6883] mov rax, qword [rbp - 0xa8]
+6893 [6886] lea rcx, [rdx + rax]
+6897 [6893] movabs rdx, 0x226b9021d778331
+6907 [6897] mov rax, rcx
+6910 [6907] imul rdx
+6913 [6910] mov rax, rdx
+6916 [6913] sar rax, 0x17
+6920 [6916] mov rdx, rcx
+6923 [6920] sar rdx, 0x3f
+6927 [6923] sub rax, rdx
+6930 [6927] imul rdx, rax, 0x3b800001
+6937 [6930] mov rax, rcx
+6940 [6937] sub rax, rdx
+6943 [6940] imul rax, qword [rbp - 0xc0]
+6951 [6943] mov rsi, rax
+6954 [6951] movabs rdx, 0x226b9021d778331
+6964 [6954] mov rax, rsi
+6967 [6964] imul rdx
+6970 [6967] mov rax, rdx
+6973 [6970] sar rax, 0x17
+6977 [6973] mov rdx, rsi
+6980 [6977] sar rdx, 0x3f
+6984 [6980] sub rax, rdx
+6987 [6984] mov rcx, rax
+6990 [6987] imul rax, rcx, 0x3b800001
+6997 [6990] mov rcx, rsi
+7000 [6997] sub rcx, rax
+7003 [7000] mov rax, qword [rbp - 0xb8]
+7010 [7003] add rax, 1
+7014 [7010] imul rax, qword [rbp - 0xc0]
+7022 [7014] mov rsi, rax
+7025 [7022] movabs rdx, 0x226b9021d778331
+7035 [7025] mov rax, rsi
+7038 [7035] imul rdx
+7041 [7038] mov rax, rdx
+7044 [7041] sar rax, 0x17
+7048 [7044] mov rdx, rsi
+7051 [7048] sar rdx, 0x3f
+7055 [7051] sub rax, rdx
+7058 [7055] imul rdx, rax, 0x3b800001
+7065 [7058] mov rax, rsi
+7068 [7065] sub rax, rdx
+7071 [7068] mov rdi, qword [rbp - 0xe8]
+7078 [7071] mov rsi, qword [rbp - 0xc0]
+7085 [7078] mov rdx, rax
+7088 [7085] call sym.makemy_long_long__long_long__long_long_
+7093 [7088] mov eax, dword [rbp - 0xf4]
+7099 [7093] mov esi, eax
+7101 [7099] lea rax, [obj.std::cout]
+7108 [7101] mov rdi, rax
+7111 [7108] call sym.imp.std::ostream::operator___int_
+7116 [7111] mov rdx, rax
+7119 [7116] lea rax, [0x00004060]
+7126 [7119] mov rsi, rax
+7129 [7126] mov rdi, rdx
+7132 [7129] call method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+7137 [7132] mov rdx, rax
+7140 [7137] mov rax, qword [rbp - 0xe8]
+7147 [7140] mov rax, qword [rax]
+7150 [7147] mov rsi, rax
+7153 [7150] mov rdi, rdx
+7156 [7153] call sym.imp.std::ostream::operator___long_long_
+7161 [7156] mov rdx, rax
+7164 [7161] lea rax, [0x00004060]
+7171 [7164] mov rsi, rax
+7174 [7171] mov rdi, rdx
+7177 [7174] call method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+7182 [7177] mov rdx, rax
+7185 [7182] mov rax, qword [rbp - 0xe8]
+7192 [7185] mov rax, qword [rax + 8]
+7196 [7192] mov rsi, rax
+7199 [7196] mov rdi, rdx
+7202 [7199] call sym.imp.std::ostream::operator___long_long_
+7207 [7202] mov rdx, rax
+7210 [7207] lea rax, [0x00004060]
+7217 [7210] mov rsi, rax
+7220 [7217] mov rdi, rdx
+7223 [7220] call method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+7228 [7223] mov rdx, rax
+7231 [7228] mov rax, qword [rbp - 0xe8]
+7238 [7231] mov rax, qword [rax + 0x10]
+7242 [7238] mov rsi, rax
+7245 [7242] mov rdi, rdx
+7248 [7245] call sym.imp.std::ostream::operator___long_long_
+7253 [7248] mov rdx, qword [reloc.std::basic_ostream_char__std::char_traits_char____std::endl_char__std::char_traits_char____std::basic_ostream_char__std::char_traits_char____]
+7260 [7253] mov rsi, rdx
+7263 [7260] mov rdi, rax
+7266 [7263] call sym.imp.std::ostream::operator___std::ostream____std::ostream__
+7271 [7266] nop
+7272 [7271] lea rax, [rbp - 0x50]
+7276 [7272] mov rdi, rax
+7279 [7276] call method.std::vector_long_long__std::allocator_long_long___.vector__
+7284 [7279] lea rax, [rbp - 0x70]
+7288 [7284] mov rdi, rax
+7291 [7288] call method.std::vector_long_long__std::allocator_long_long___.vector__
+7296 [7291] lea rax, [rbp - 0x90]
+7303 [7296] mov rdi, rax
+7306 [7303] call method.std::vector_long_long__std::allocator_long_long___.vector__
+7311 [7306] nop
+7312 [7311] mov rax, qword [rbp - 0x18]
+7316 [7312] sub rax, qword fs:[0x28]
+7325 [7316] je 0x1d2e
+7331 [7325] jmp 0x1d29
+7465 [7331] call sym.imp.__stack_chk_fail
+7470 [7465] mov rax, qword [rbp - 0xe8]
+7477 [7470] mov rbx, qword [rbp - 8]
+7481 [7477] leave
+7482 [7481] ret
+**END: CFG
+
+**FUNC: method.std.function_my__int__int__::function_solve__::lambda_int__int_1__void__solve__::lambda_int__int_1_
+**BEGIN: CFG
+8614 [] push rbp
+8615 [8614] mov rbp, rsp
+8618 [8615] push rbx
+8619 [8618] sub rsp, 0x18
+8623 [8619] mov qword [rbp - 0x18], rdi
+8627 [8623] mov qword [rbp - 0x20], rsi
+8631 [8627] mov rax, qword [rbp - 0x18]
+8635 [8631] mov qword [rax], 0
+8642 [8635] mov qword [rax + 8], 0
+8650 [8642] mov qword [rax + 0x10], 0
+8658 [8650] mov rax, qword [rbp - 0x18]
+8662 [8658] mov rdi, rax
+8665 [8662] call method.std::_Function_base._Function_base__
+8670 [8665] mov rax, qword [rbp - 0x18]
+8674 [8670] mov qword [rax + 0x18], 0
+8682 [8674] mov rax, qword [rbp - 0x20]
+8686 [8682] mov rdi, rax
+8689 [8686] call method.bool_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_not_empty_function_lambda_int__int_1__lambda_int__int_1_const_
+8694 [8689] test al, al
+8696 [8694] je 0x2256
+8698 [8696] mov rax, qword [rbp - 0x20]
+8702 [8698] mov rdi, rax
+8705 [8702] call fcn.0000226c
+8710 [8705] mov rdx, rax
+8713 [8710] mov rax, qword [rbp - 0x18]
+8717 [8713] mov rsi, rdx
+8720 [8717] mov rdi, rax
+8723 [8720] call method.void_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_init_functor_lambda_int__int_1__std::_Any_data__lambda_int__int_1_
+8728 [8723] mov rax, qword [rbp - 0x18]
+8732 [8728] lea rdx, [method.std._Function_handler_my__int__int___solve__::lambda_int__int_1_::_M_invoke_std::_Any_data_const__int__std::_Any_data_const_]
+8739 [8732] mov qword [rax + 0x18], rdx
+8743 [8739] mov rax, qword [rbp - 0x18]
+8747 [8743] lea rdx, [method.std._Function_handler_my__int__int___solve__::lambda_int__int_1_::_M_manager_std::_Any_data__std::_Function_handler_my__int__int___solve__::lambda_int__int_1__const__std::_Manager_operation_]
+8754 [8747] mov qword [rax + 0x10], rdx
+8758 [8754] jmp 0x2256
+8790 [8758] nop
+8791 [8790] mov rbx, qword [rbp - 8]
+8795 [8791] leave
+8796 [8795] ret
+**END: CFG
+
+**FUNC: method.bool_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_not_empty_function_lambda_int__int_1__lambda_int__int_1_const_
+**BEGIN: CFG
+8797 [] push rbp
+8798 [8797] mov rbp, rsp
+8801 [8798] mov qword [rbp - 8], rdi
+8805 [8801] mov eax, 1
+8810 [8805] pop rbp
+8811 [8810] ret
+**END: CFG
+
+**FUNC: fcn.0000226c
+**BEGIN: CFG
+8812 [] push rbp
+8813 [8812] mov rbp, rsp
+8816 [8813] mov qword [rbp - 8], rdi
+8820 [8816] mov rax, qword [rbp - 8]
+8824 [8820] pop rbp
+8825 [8824] ret
+**END: CFG
+
+**FUNC: method.void_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_init_functor_lambda_int__int_1__std::_Any_data__lambda_int__int_1_
+**BEGIN: CFG
+8826 [] push rbp
+8827 [8826] mov rbp, rsp
+8830 [8827] sub rsp, 0x10
+8834 [8830] mov qword [rbp - 8], rdi
+8838 [8834] mov qword [rbp - 0x10], rsi
+8842 [8838] mov rax, qword [rbp - 0x10]
+8846 [8842] mov rdi, rax
+8849 [8846] call fcn.0000226c
+8854 [8849] mov rdx, rax
+8857 [8854] mov rax, qword [rbp - 8]
+8861 [8857] mov rsi, rdx
+8864 [8861] mov rdi, rax
+8867 [8864] call method.void_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_create_lambda_int__int_1__std::_Any_data__lambda_int__int_1__std::integral_constant_bool__false__
+8872 [8867] nop
+8873 [8872] leave
+8874 [8873] ret
+**END: CFG
+
+**FUNC: method.void_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_create_lambda_int__int_1__std::_Any_data__lambda_int__int_1__std::integral_constant_bool__false__
+**BEGIN: CFG
+9145 [] push rbp
+9146 [9145] mov rbp, rsp
+9149 [9146] push r12
+9151 [9149] push rbx
+9152 [9151] sub rsp, 0x10
+9156 [9152] mov qword [rbp - 0x18], rdi
+9160 [9156] mov qword [rbp - 0x20], rsi
+9164 [9160] mov rax, qword [rbp - 0x20]
+9168 [9164] mov rdi, rax
+9171 [9168] call fcn.0000226c
+9176 [9171] mov r12, rax
+9179 [9176] mov edi, 0x18
+9184 [9179] call sym.imp.operator_new_unsigned_long_
+9189 [9184] mov rbx, rax
+9192 [9189] mov rax, qword [r12]
+9196 [9192] mov rdx, qword [r12 + 8]
+9201 [9196] mov qword [rbx], rax
+9204 [9201] mov qword [rbx + 8], rdx
+9208 [9204] mov rax, qword [r12 + 0x10]
+9213 [9208] mov qword [rbx + 0x10], rax
+9217 [9213] mov rax, qword [rbp - 0x18]
+9221 [9217] mov rdi, rax
+9224 [9221] call sym.solve__::lambda_int__int_1_std::_Any_data::_M_access_solve__::lambda_int__int_1___
+9229 [9224] mov qword [rax], rbx
+9232 [9229] nop
+9233 [9232] add rsp, 0x10
+9237 [9233] pop rbx
+9238 [9237] pop r12
+9240 [9238] pop rbp
+9241 [9240] ret
+**END: CFG
+
+**FUNC: sym.imp.operator_new_unsigned_long_
+**BEGIN: CFG
+4608 [] endbr64
+4612 [4608] bnd jmp qword [reloc.operator_new_unsigned_long_]
+**END: CFG
+
+**FUNC: sym.solve__::lambda_int__int_1_std::_Any_data::_M_access_solve__::lambda_int__int_1___
+**BEGIN: CFG
+9410 [] push rbp
+9411 [9410] mov rbp, rsp
+9414 [9411] sub rsp, 0x10
+9418 [9414] mov qword [rbp - 8], rdi
+9422 [9418] mov rax, qword [rbp - 8]
+9426 [9422] mov rdi, rax
+9429 [9426] call method.std::_Any_data._M_access__
+9434 [9429] leave
+9435 [9434] ret
+**END: CFG
+
+**FUNC: method.std::_Any_data._M_access__
+**BEGIN: CFG
+10138 [] endbr64
+10142 [10138] push rbp
+10143 [10142] mov rbp, rsp
+10146 [10143] mov qword [rbp - 8], rdi
+10150 [10146] mov rax, qword [rbp - 8]
+10154 [10150] pop rbp
+10155 [10154] ret
+**END: CFG
+
+**FUNC: method.std._Function_handler_my__int__int___solve__::lambda_int__int_1_::_M_invoke_std::_Any_data_const__int__std::_Any_data_const_
+**BEGIN: CFG
+8875 [] endbr64
+8879 [8875] push rbp
+8880 [8879] mov rbp, rsp
+8883 [8880] push r12
+8885 [8883] push rbx
+8886 [8885] sub rsp, 0x30
+8890 [8886] mov qword [rbp - 0x28], rdi
+8894 [8890] mov qword [rbp - 0x30], rsi
+8898 [8894] mov qword [rbp - 0x38], rdx
+8902 [8898] mov qword [rbp - 0x40], rcx
+8906 [8902] mov rax, qword fs:[0x28]
+8915 [8906] mov qword [rbp - 0x18], rax
+8919 [8915] xor eax, eax
+8921 [8919] mov rax, qword [rbp - 0x40]
+8925 [8921] mov rdi, rax
+8928 [8925] call method.int_std.forward_int__std::remove_reference_int_::type_
+8933 [8928] mov r12, rax
+8936 [8933] mov rax, qword [rbp - 0x38]
+8940 [8936] mov rdi, rax
+8943 [8940] call method.int_std.forward_int__std::remove_reference_int_::type_
+8948 [8943] mov rbx, rax
+8951 [8948] mov rax, qword [rbp - 0x30]
+8955 [8951] mov rdi, rax
+8958 [8955] call method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_get_pointer_std::_Any_data_const_
+8963 [8958] mov rsi, rax
+8966 [8963] mov rax, qword [rbp - 0x28]
+8970 [8966] mov rcx, r12
+8973 [8970] mov rdx, rbx
+8976 [8973] mov rdi, rax
+8979 [8976] call method.std.enable_if_is_invocable_r_v_my__solve__::lambda_int__int_1__int__int___std::enable_if_::type_std::__invoke_r_my__solve__::lambda_int__int_1__int__int__my___solve__::lambda_int__int_1_..._
+8984 [8979] nop
+8985 [8984] mov rax, qword [rbp - 0x18]
+8989 [8985] sub rax, qword fs:[0x28]
+8998 [8989] je 0x232d
+9000 [8998] call sym.imp.__stack_chk_fail
+9005 [9000] mov rax, qword [rbp - 0x28]
+9009 [9005] add rsp, 0x30
+9013 [9009] pop rbx
+9014 [9013] pop r12
+9016 [9014] pop rbp
+9017 [9016] ret
+**END: CFG
+
+**FUNC: method.int_std.forward_int__std::remove_reference_int_::type_
+**BEGIN: CFG
+10486 [] endbr64
+10490 [10486] push rbp
+10491 [10490] mov rbp, rsp
+10494 [10491] mov qword [rbp - 8], rdi
+10498 [10494] mov rax, qword [rbp - 8]
+10502 [10498] pop rbp
+10503 [10502] ret
+**END: CFG
+
+**FUNC: method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_get_pointer_std::_Any_data_const_
+**BEGIN: CFG
+9242 [] push rbp
+9243 [9242] mov rbp, rsp
+9246 [9243] sub rsp, 0x10
+9250 [9246] mov qword [rbp - 8], rdi
+9254 [9250] mov rax, qword [rbp - 8]
+9258 [9254] mov rdi, rax
+9261 [9258] call sym.solve__::lambda_int__int_1_const_std::_Any_data::_M_access_solve__::lambda_int__int_1____const
+9266 [9261] mov rax, qword [rax]
+9269 [9266] leave
+9270 [9269] ret
+**END: CFG
+
+**FUNC: sym.solve__::lambda_int__int_1_const_std::_Any_data::_M_access_solve__::lambda_int__int_1____const
+**BEGIN: CFG
+9602 [] push rbp
+9603 [9602] mov rbp, rsp
+9606 [9603] sub rsp, 0x10
+9610 [9606] mov qword [rbp - 8], rdi
+9614 [9610] mov rax, qword [rbp - 8]
+9618 [9614] mov rdi, rax
+9621 [9618] call method.std::_Any_data._M_access___const
+9626 [9621] leave
+9627 [9626] ret
+**END: CFG
+
+**FUNC: method.std::_Any_data._M_access___const
+**BEGIN: CFG
+10156 [] endbr64
+10160 [10156] push rbp
+10161 [10160] mov rbp, rsp
+10164 [10161] mov qword [rbp - 8], rdi
+10168 [10164] mov rax, qword [rbp - 8]
+10172 [10168] pop rbp
+10173 [10172] ret
+**END: CFG
+
+**FUNC: method.std.enable_if_is_invocable_r_v_my__solve__::lambda_int__int_1__int__int___std::enable_if_::type_std::__invoke_r_my__solve__::lambda_int__int_1__int__int__my___solve__::lambda_int__int_1_..._
+**BEGIN: CFG
+9271 [] push rbp
+9272 [9271] mov rbp, rsp
+9275 [9272] push r12
+9277 [9275] push rbx
+9278 [9277] sub rsp, 0x30
+9282 [9278] mov qword [rbp - 0x28], rdi
+9286 [9282] mov qword [rbp - 0x30], rsi
+9290 [9286] mov qword [rbp - 0x38], rdx
+9294 [9290] mov qword [rbp - 0x40], rcx
+9298 [9294] mov rax, qword fs:[0x28]
+9307 [9298] mov qword [rbp - 0x18], rax
+9311 [9307] xor eax, eax
+9313 [9311] mov rax, qword [rbp - 0x40]
+9317 [9313] mov rdi, rax
+9320 [9317] call method.int_std.forward_int__std::remove_reference_int_::type_
+9325 [9320] mov r12, rax
+9328 [9325] mov rax, qword [rbp - 0x38]
+9332 [9328] mov rdi, rax
+9335 [9332] call method.int_std.forward_int__std::remove_reference_int_::type_
+9340 [9335] mov rbx, rax
+9343 [9340] mov rax, qword [rbp - 0x30]
+9347 [9343] mov rdi, rax
+9350 [9347] call sym.solve__::lambda_int__int_1_std::forward_solve__::lambda_int__int_1__std::remove_reference_solve__::lambda_int__int_1_::type_
+9355 [9350] mov rsi, rax
+9358 [9355] mov rax, qword [rbp - 0x28]
+9362 [9358] mov rcx, r12
+9365 [9362] mov rdx, rbx
+9368 [9365] mov rdi, rax
+9371 [9368] call method.my_std.__invoke_impl_my__solve__::lambda_int__int_1__int__int__std::__invoke_other__solve__::lambda_int__int_1__int__int_
+9376 [9371] nop
+9377 [9376] mov rax, qword [rbp - 0x18]
+9381 [9377] sub rax, qword fs:[0x28]
+9390 [9381] je 0x24b5
+9392 [9390] call sym.imp.__stack_chk_fail
+9397 [9392] mov rax, qword [rbp - 0x28]
+9401 [9397] add rsp, 0x30
+9405 [9401] pop rbx
+9406 [9405] pop r12
+9408 [9406] pop rbp
+9409 [9408] ret
+**END: CFG
+
+**FUNC: sym.solve__::lambda_int__int_1_std::forward_solve__::lambda_int__int_1__std::remove_reference_solve__::lambda_int__int_1_::type_
+**BEGIN: CFG
+9628 [] push rbp
+9629 [9628] mov rbp, rsp
+9632 [9629] mov qword [rbp - 8], rdi
+9636 [9632] mov rax, qword [rbp - 8]
+9640 [9636] pop rbp
+9641 [9640] ret
+**END: CFG
+
+**FUNC: method.my_std.__invoke_impl_my__solve__::lambda_int__int_1__int__int__std::__invoke_other__solve__::lambda_int__int_1__int__int_
+**BEGIN: CFG
+9642 [] push rbp
+9643 [9642] mov rbp, rsp
+9646 [9643] push r12
+9648 [9646] push rbx
+9649 [9648] sub rsp, 0x30
+9653 [9649] mov qword [rbp - 0x28], rdi
+9657 [9653] mov qword [rbp - 0x30], rsi
+9661 [9657] mov qword [rbp - 0x38], rdx
+9665 [9661] mov qword [rbp - 0x40], rcx
+9669 [9665] mov rax, qword fs:[0x28]
+9678 [9669] mov qword [rbp - 0x18], rax
+9682 [9678] xor eax, eax
+9684 [9682] mov rax, qword [rbp - 0x30]
+9688 [9684] mov rdi, rax
+9691 [9688] call sym.solve__::lambda_int__int_1_std::forward_solve__::lambda_int__int_1__std::remove_reference_solve__::lambda_int__int_1_::type_
+9696 [9691] mov r12, rax
+9699 [9696] mov rax, qword [rbp - 0x40]
+9703 [9699] mov rdi, rax
+9706 [9703] call method.int_std.forward_int__std::remove_reference_int_::type_
+9711 [9706] mov ebx, dword [rax]
+9713 [9711] mov rax, qword [rbp - 0x38]
+9717 [9713] mov rdi, rax
+9720 [9717] call method.int_std.forward_int__std::remove_reference_int_::type_
+9725 [9720] mov edx, dword [rax]
+9727 [9725] mov rax, qword [rbp - 0x28]
+9731 [9727] mov ecx, ebx
+9733 [9731] mov rsi, r12
+9736 [9733] mov rdi, rax
+9739 [9736] call sym.solve__::lambda_int__int_1::operator___int__int__const
+9744 [9739] nop
+9745 [9744] mov rax, qword [rbp - 0x18]
+9749 [9745] sub rax, qword fs:[0x28]
+9758 [9749] je 0x2625
+9760 [9758] call sym.imp.__stack_chk_fail
+9765 [9760] mov rax, qword [rbp - 0x28]
+9769 [9765] add rsp, 0x30
+9773 [9769] pop rbx
+9774 [9773] pop r12
+9776 [9774] pop rbp
+9777 [9776] ret
+**END: CFG
+
+**FUNC: method.std._Function_handler_my__int__int___solve__::lambda_int__int_1_::_M_manager_std::_Any_data__std::_Function_handler_my__int__int___solve__::lambda_int__int_1__const__std::_Manager_operation_
+**BEGIN: CFG
+9018 [] endbr64
+9022 [9018] push rbp
+9023 [9022] mov rbp, rsp
+9026 [9023] push rbx
+9027 [9026] sub rsp, 0x28
+9031 [9027] mov qword [rbp - 0x18], rdi
+9035 [9031] mov qword [rbp - 0x20], rsi
+9039 [9035] mov dword [rbp - 0x24], edx
+9042 [9039] mov eax, dword [rbp - 0x24]
+9045 [9042] test eax, eax
+9047 [9045] je 0x2360
+9049 [9047] cmp eax, 1
+9052 [9049] je 0x2378
+9054 [9052] jmp 0x2398
+9056 [] mov rax, qword [rbp - 0x18]
+9060 [9056] mov rdi, rax
+9063 [9060] call method.std::type_info_const_std::_Any_data::_M_access_std.type_info_const___
+9068 [9063] lea rdx, [obj.typeinfo_for_solve__::lambda_int__int_1]
+9075 [9068] mov qword [rax], rdx
+9078 [9075] jmp 0x23ae
+9080 [] mov rax, qword [rbp - 0x20]
+9084 [9080] mov rdi, rax
+9087 [9084] call method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_get_pointer_std::_Any_data_const_
+9092 [9087] mov rbx, rax
+9095 [9092] mov rax, qword [rbp - 0x18]
+9099 [9095] mov rdi, rax
+9102 [9099] call sym.solve__::lambda_int__int_1_std::_Any_data::_M_access_solve__::lambda_int__int_1___
+9107 [9102] mov qword [rax], rbx
+9110 [9107] jmp 0x23ae
+9112 [9054] mov edx, dword [rbp - 0x24]
+9115 [9112] mov rcx, qword [rbp - 0x20]
+9119 [9115] mov rax, qword [rbp - 0x18]
+9123 [9119] mov rsi, rcx
+9126 [9123] mov rdi, rax
+9129 [9126] call method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_manager_std::_Any_data__std::_Function_base::_Base_manager_solve__::lambda_int__int_1__const__std::_Manager_operation_
+9134 [9078 9110 9129] mov eax, 0
+9139 [9134] mov rbx, qword [rbp - 8]
+9143 [9139] leave
+9144 [9143] ret
+**END: CFG
+
+**FUNC: method.std::type_info_const_std::_Any_data::_M_access_std.type_info_const___
+**BEGIN: CFG
+12968 [] endbr64
+12972 [12968] push rbp
+12973 [12972] mov rbp, rsp
+12976 [12973] sub rsp, 0x10
+12980 [12976] mov qword [rbp - 8], rdi
+12984 [12980] mov rax, qword [rbp - 8]
+12988 [12984] mov rdi, rax
+12991 [12988] call method.std::_Any_data._M_access__
+12996 [12991] leave
+12997 [12996] ret
+**END: CFG
+
+**FUNC: method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_manager_std::_Any_data__std::_Function_base::_Base_manager_solve__::lambda_int__int_1__const__std::_Manager_operation_
+**BEGIN: CFG
+9436 [] push rbp
+9437 [9436] mov rbp, rsp
+9440 [9437] push rbx
+9441 [9440] sub rsp, 0x28
+9445 [9441] mov qword [rbp - 0x18], rdi
+9449 [9445] mov qword [rbp - 0x20], rsi
+9453 [9449] mov dword [rbp - 0x24], edx
+9456 [9453] mov eax, dword [rbp - 0x24]
+9459 [9456] cmp eax, 3
+9462 [9459] je 0x256a
+9464 [9462] cmp eax, 3
+9467 [9464] jg 0x2577
+9469 [9467] cmp eax, 2
+9472 [9469] je 0x254a
+9474 [9472] cmp eax, 2
+9477 [9474] jg 0x2577
+9479 [9477] test eax, eax
+9481 [9479] je 0x2512
+9483 [9481] cmp eax, 1
+9486 [9483] je 0x252a
+9488 [9486] jmp 0x2577
+9490 [] mov rax, qword [rbp - 0x18]
+9494 [9490] mov rdi, rax
+9497 [9494] call method.std::type_info_const_std::_Any_data::_M_access_std.type_info_const___
+9502 [9497] lea rdx, [obj.typeinfo_for_solve__::lambda_int__int_1]
+9509 [9502] mov qword [rax], rdx
+9512 [9509] jmp 0x2577
+9514 [] mov rax, qword [rbp - 0x20]
+9518 [9514] mov rdi, rax
+9521 [9518] call method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_get_pointer_std::_Any_data_const_
+9526 [9521] mov rbx, rax
+9529 [9526] mov rax, qword [rbp - 0x18]
+9533 [9529] mov rdi, rax
+9536 [9533] call sym.solve__::lambda_int__int_1_std::_Any_data::_M_access_solve__::lambda_int__int_1___
+9541 [9536] mov qword [rax], rbx
+9544 [9541] jmp 0x2577
+9546 [] mov rax, qword [rbp - 0x20]
+9550 [9546] mov rdi, rax
+9553 [9550] call method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_get_pointer_std::_Any_data_const_
+9558 [9553] mov rdx, rax
+9561 [9558] mov rax, qword [rbp - 0x18]
+9565 [9561] mov rsi, rdx
+9568 [9565] mov rdi, rax
+9571 [9568] call method.void_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_init_functor_lambda_int__int_1_const__std::_Any_data__lambda_int__int_1_const_
+9576 [9571] jmp 0x2577
+9578 [] mov rax, qword [rbp - 0x18]
+9582 [9578] mov rdi, rax
+9585 [9582] call method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_destroy_std::_Any_data__std::integral_constant_bool__false__
+9590 [9585] nop
+9591 [9488 9512 9544 9576 9590] mov eax, 0
+9596 [9591] mov rbx, qword [rbp - 8]
+9600 [9596] leave
+9601 [9600] ret
+**END: CFG
+
+**FUNC: method.void_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_init_functor_lambda_int__int_1_const__std::_Any_data__lambda_int__int_1_const_
+**BEGIN: CFG
+9778 [] push rbp
+9779 [9778] mov rbp, rsp
+9782 [9779] sub rsp, 0x10
+9786 [9782] mov qword [rbp - 8], rdi
+9790 [9786] mov qword [rbp - 0x10], rsi
+9794 [9790] mov rax, qword [rbp - 0x10]
+9798 [9794] mov rdi, rax
+9801 [9798] call sym.solve__::lambda_int__int_1_const_std::forward_solve__::lambda_int__int_1_const__std::remove_reference_solve__::lambda_int__int_1_const_::type_
+9806 [9801] mov rdx, rax
+9809 [9806] mov rax, qword [rbp - 8]
+9813 [9809] mov rsi, rdx
+9816 [9813] mov rdi, rax
+9819 [9816] call method.void_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_create_lambda_int__int_1_const__std::_Any_data__lambda_int__int_1_const__std::integral_constant_bool__false__
+9824 [9819] nop
+9825 [9824] leave
+9826 [9825] ret
+**END: CFG
+
+**FUNC: sym.solve__::lambda_int__int_1_const_std::forward_solve__::lambda_int__int_1_const__std::remove_reference_solve__::lambda_int__int_1_const_::type_
+**BEGIN: CFG
+9875 [] push rbp
+9876 [9875] mov rbp, rsp
+9879 [9876] mov qword [rbp - 8], rdi
+9883 [9879] mov rax, qword [rbp - 8]
+9887 [9883] pop rbp
+9888 [9887] ret
+**END: CFG
+
+**FUNC: method.void_std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_create_lambda_int__int_1_const__std::_Any_data__lambda_int__int_1_const__std::integral_constant_bool__false__
+**BEGIN: CFG
+9889 [] push rbp
+9890 [9889] mov rbp, rsp
+9893 [9890] push r12
+9895 [9893] push rbx
+9896 [9895] sub rsp, 0x10
+9900 [9896] mov qword [rbp - 0x18], rdi
+9904 [9900] mov qword [rbp - 0x20], rsi
+9908 [9904] mov rax, qword [rbp - 0x20]
+9912 [9908] mov rdi, rax
+9915 [9912] call sym.solve__::lambda_int__int_1_const_std::forward_solve__::lambda_int__int_1_const__std::remove_reference_solve__::lambda_int__int_1_const_::type_
+9920 [9915] mov r12, rax
+9923 [9920] mov edi, 0x18
+9928 [9923] call sym.imp.operator_new_unsigned_long_
+9933 [9928] mov rbx, rax
+9936 [9933] mov rax, qword [r12]
+9940 [9936] mov rdx, qword [r12 + 8]
+9945 [9940] mov qword [rbx], rax
+9948 [9945] mov qword [rbx + 8], rdx
+9952 [9948] mov rax, qword [r12 + 0x10]
+9957 [9952] mov qword [rbx + 0x10], rax
+9961 [9957] mov rax, qword [rbp - 0x18]
+9965 [9961] mov rdi, rax
+9968 [9965] call sym.solve__::lambda_int__int_1_std::_Any_data::_M_access_solve__::lambda_int__int_1___
+9973 [9968] mov qword [rax], rbx
+9976 [9973] nop
+9977 [9976] add rsp, 0x10
+9981 [9977] pop rbx
+9982 [9981] pop r12
+9984 [9982] pop rbp
+9985 [9984] ret
+**END: CFG
+
+**FUNC: method.std::_Function_base._Base_manager_solve__::lambda_int__int_1_::_M_destroy_std::_Any_data__std::integral_constant_bool__false__
+**BEGIN: CFG
+9827 [] push rbp
+9828 [9827] mov rbp, rsp
+9831 [9828] sub rsp, 0x10
+9835 [9831] mov qword [rbp - 8], rdi
+9839 [9835] mov rax, qword [rbp - 8]
+9843 [9839] mov rdi, rax
+9846 [9843] call sym.solve__::lambda_int__int_1_std::_Any_data::_M_access_solve__::lambda_int__int_1___
+9851 [9846] mov rax, qword [rax]
+9854 [9851] test rax, rax
+9857 [9854] je 0x2690
+9859 [9857] mov esi, 0x18
+9864 [9859] mov rdi, rax
+9867 [9864] call sym.imp.operator_delete_void__unsigned_long_
+9872 [9867] nop
+9873 [9872] leave
+9874 [9873] ret
+**END: CFG
+
+**FUNC: sym.imp.operator_delete_void__unsigned_long_
+**BEGIN: CFG
+4624 [] endbr64
+4628 [4624] bnd jmp qword [reloc.operator_delete_void__unsigned_long_]
+**END: CFG
+
+**FUNC: sym.__static_initialization_and_destruction_0_int__int_
+**BEGIN: CFG
+9986 [] endbr64
+9990 [9986] push rbp
+9991 [9990] mov rbp, rsp
+9994 [9991] sub rsp, 0x10
+9998 [9994] mov dword [rbp - 4], edi
+10001 [9998] mov dword [rbp - 8], esi
+10004 [10001] cmp dword [rbp - 4], 1
+10008 [10004] jne 0x2755
+10010 [10008] cmp dword [rbp - 8], 0xffff
+10017 [10010] jne 0x2755
+10019 [10017] lea rax, obj.std::__ioinit
+10026 [10019] mov rdi, rax
+10029 [10026] call sym.imp.std::ios_base::Init::Init__
+10034 [10029] lea rax, obj.__dso_handle
+10041 [10034] mov rdx, rax
+10044 [10041] lea rax, obj.std::__ioinit
+10051 [10044] mov rsi, rax
+10054 [10051] mov rax, qword [method.std::ios_base::Init.Init__]
+10061 [10054] mov rdi, rax
+10064 [10061] call sym.imp.__cxa_atexit
+10069 [10064] nop
+10070 [10069] leave
+10071 [10070] ret
+**END: CFG
+
+**FUNC: sym.imp.std::ios_base::Init::Init__
+**BEGIN: CFG
+4672 [] endbr64
+4676 [4672] bnd jmp qword [_ZNSt8ios_base4InitC1Ev]
+**END: CFG
+
+**FUNC: entry.init1
+**BEGIN: CFG
+10072 [] endbr64
+10076 [10072] push rbp
+10077 [10076] mov rbp, rsp
+10080 [10077] mov esi, 0xffff
+10085 [10080] mov edi, 1
+10090 [10085] call sym.__static_initialization_and_destruction_0_int__int_
+10095 [10090] pop rbp
+10096 [10095] ret
+**END: CFG
+
+**FUNC: fcn.00002ae4
+**BEGIN: CFG
+10980 [] endbr64
+10984 [10980] push rbp
+10985 [10984] mov rbp, rsp
+10988 [10985] sub rsp, 0x10
+10992 [10988] mov qword [rbp - 8], rdi
+10996 [10992] mov rax, qword [rbp - 8]
+11000 [10996] mov rdi, rax
+11003 [11000] call fcn.00003082
+11008 [11003] nop
+11009 [11008] leave
+11010 [11009] ret
+**END: CFG
+
+**FUNC: fcn.00003082
+**BEGIN: CFG
+12418 [] endbr64
+12422 [12418] push rbp
+12423 [12422] mov rbp, rsp
+12426 [12423] mov qword [rbp - 8], rdi
+12430 [12426] nop
+12431 [12430] pop rbp
+12432 [12431] ret
+**END: CFG
+
+**FUNC: sym.std::_Vector_base_int__std::allocator_int___::_Vector_impl::_Vector_impl__
+**BEGIN: CFG
+10312 [] endbr64
+10316 [10312] push rbp
+10317 [10316] mov rbp, rsp
+10320 [10317] sub rsp, 0x10
+10324 [10320] mov qword [rbp - 8], rdi
+10328 [10324] mov rax, qword [rbp - 8]
+10332 [10328] mov rdi, rax
+10335 [10332] call fcn.00002962
+10340 [10335] nop
+10341 [10340] leave
+10342 [10341] ret
+**END: CFG
+
+**FUNC: fcn.00002962
+**BEGIN: CFG
+10594 [] endbr64
+10598 [10594] push rbp
+10599 [10598] mov rbp, rsp
+10602 [10599] sub rsp, 0x10
+10606 [10602] mov qword [rbp - 8], rdi
+10610 [10606] mov rax, qword [rbp - 8]
+10614 [10610] mov rdi, rax
+10617 [10614] call sym.__gnu_cxx::new_allocator_int_::new_allocator__
+10622 [10617] nop
+10623 [10622] leave
+10624 [10623] ret
+**END: CFG
+
+**FUNC: sym.__gnu_cxx::new_allocator_int_::new_allocator__
+**BEGIN: CFG
+11760 [] endbr64
+11764 [11760] push rbp
+11765 [11764] mov rbp, rsp
+11768 [11765] mov qword [rbp - 8], rdi
+11772 [11768] nop
+11773 [11772] pop rbp
+11774 [11773] ret
+**END: CFG
+
+**FUNC: fcn.000027be
+**BEGIN: CFG
+10174 [] endbr64
+10178 [10174] push rbp
+10179 [10178] mov rbp, rsp
+10182 [10179] sub rsp, 0x10
+10186 [10182] mov qword [rbp - 8], rdi
+10190 [10186] mov rax, qword [rbp - 8]
+10194 [10190] mov rax, qword [rax + 0x10]
+10198 [10194] test rax, rax
+10201 [10198] je 0x27f9
+10203 [10201] mov rax, qword [rbp - 8]
+10207 [10203] mov r8, qword [rax + 0x10]
+10211 [10207] mov rcx, qword [rbp - 8]
+10215 [10211] mov rax, qword [rbp - 8]
+10219 [10215] mov edx, 3
+10224 [10219] mov rsi, rcx
+10227 [10224] mov rdi, rax
+10230 [10227] call r8
+10233 [10230] nop
+10234 [10233] leave
+10235 [10234] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_int__std::allocator_int___._M_allocate_unsigned_long_
+**BEGIN: CFG
+13496 [] endbr64
+13500 [13496] push rbp
+13501 [13500] mov rbp, rsp
+13504 [13501] sub rsp, 0x10
+13508 [13504] mov qword [rbp - 8], rdi
+13512 [13508] mov qword [rbp - 0x10], rsi
+13516 [13512] cmp qword [rbp - 0x10], 0
+13521 [13516] je 0x34e8
+13523 [13521] mov rax, qword [rbp - 8]
+13527 [13523] mov rdx, qword [rbp - 0x10]
+13531 [13527] mov rsi, rdx
+13534 [13531] mov rdi, rax
+13537 [13534] call method.std::allocator_traits_std::allocator_int___.allocate_std::allocator_int___unsigned_long_
+13542 [13537] jmp 0x34ed
+13544 [] mov eax, 0
+13549 [13542 13544] leave
+13550 [13549] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_int_.allocate_unsigned_long__void_const_
+**BEGIN: CFG
+14666 [] endbr64
+14670 [14666] push rbp
+14671 [14670] mov rbp, rsp
+14674 [14671] sub rsp, 0x20
+14678 [14674] mov qword [rbp - 8], rdi
+14682 [14678] mov qword [rbp - 0x10], rsi
+14686 [14682] mov qword [rbp - 0x18], rdx
+14690 [14686] mov rax, qword [rbp - 8]
+14694 [14690] mov rdi, rax
+14697 [14694] call method.__gnu_cxx::new_allocator_int_._M_max_size___const
+14702 [14697] cmp qword [rbp - 0x10], rax
+14706 [14702] seta al
+14709 [14706] movzx eax, al
+14712 [14709] test rax, rax
+14715 [14712] setne al
+14718 [14715] test al, al
+14720 [14718] je 0x399c
+14722 [14720] movabs rax, 0x3fffffffffffffff
+14732 [14722] cmp qword [rbp - 0x10], rax
+14736 [14732] jbe 0x3997
+14738 [14736] call sym.imp.std::__throw_bad_array_new_length__
+14743 [14738] call sym.imp.std::__throw_bad_alloc__
+14748 [14743] mov rax, qword [rbp - 0x10]
+14752 [14748] shl rax, 2
+14756 [14752] mov rdi, rax
+14759 [14756] call sym.imp.operator_new_unsigned_long_
+14764 [14759] nop
+14765 [14764] leave
+14766 [14765] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_int_._M_max_size___const
+**BEGIN: CFG
+14642 [] endbr64
+14646 [14642] push rbp
+14647 [14646] mov rbp, rsp
+14650 [14647] mov qword [rbp - 8], rdi
+14654 [14650] movabs rax, 0x1fffffffffffffff
+14664 [14654] pop rbp
+14665 [14664] ret
+**END: CFG
+
+**FUNC: sym.imp.std::__throw_bad_array_new_length__
+**BEGIN: CFG
+4560 [] endbr64
+4564 [4560] bnd jmp qword [method.std.__throw_bad_array_new_length__]
+**END: CFG
+
+**FUNC: sym.imp.std::__throw_bad_alloc__
+**BEGIN: CFG
+4448 [] endbr64
+4452 [4448] bnd jmp qword [method.std.__throw_bad_alloc__]
+**END: CFG
+
+**FUNC: method.long_long_std.fill_n_long_long__unsigned_long__long_long__long_long__unsigned_long__long_long_const_
+**BEGIN: CFG
+15434 [] endbr64
+15438 [15434] push rbp
+15439 [15438] mov rbp, rsp
+15442 [15439] sub rsp, 0x20
+15446 [15442] mov qword [rbp - 8], rdi
+15450 [15446] mov qword [rbp - 0x10], rsi
+15454 [15450] mov qword [rbp - 0x18], rdx
+15458 [15454] lea rax, [rbp - 8]
+15462 [15458] mov rdi, rax
+15465 [15462] call method.std::iterator_traits_long_long_::iterator_category_std.__iterator_category_long_long__long_long_const_
+15470 [15465] mov rax, qword [rbp - 0x10]
+15474 [15470] mov rdi, rax
+15477 [15474] call method.std.__size_to_integer_unsigned_long_
+15482 [15477] mov rcx, rax
+15485 [15482] mov rax, qword [rbp - 8]
+15489 [15485] mov rdx, qword [rbp - 0x18]
+15493 [15489] mov rsi, rcx
+15496 [15493] mov rdi, rax
+15499 [15496] call method.long_long_std.__fill_n_a_long_long__unsigned_long__long_long__long_long__unsigned_long__long_long_const__std::random_access_iterator_tag_
+15504 [15499] leave
+15505 [15504] ret
+**END: CFG
+
+**FUNC: method.std::iterator_traits_long_long_::iterator_category_std.__iterator_category_long_long__long_long_const_
+**BEGIN: CFG
+15536 [] endbr64
+15540 [15536] push rbp
+15541 [15540] mov rbp, rsp
+15544 [15541] mov qword [rbp - 8], rdi
+15548 [15544] pop rbp
+15549 [15548] ret
+**END: CFG
+
+**FUNC: method.std.__size_to_integer_unsigned_long_
+**BEGIN: CFG
+10097 [] endbr64
+10101 [10097] push rbp
+10102 [10101] mov rbp, rsp
+10105 [10102] mov qword [rbp - 8], rdi
+10109 [10105] mov rax, qword [rbp - 8]
+10113 [10109] pop rbp
+10114 [10113] ret
+**END: CFG
+
+**FUNC: method.long_long_std.__fill_n_a_long_long__unsigned_long__long_long__long_long__unsigned_long__long_long_const__std::random_access_iterator_tag_
+**BEGIN: CFG
+15550 [] endbr64
+15554 [15550] push rbp
+15555 [15554] mov rbp, rsp
+15558 [15555] sub rsp, 0x20
+15562 [15558] mov qword [rbp - 8], rdi
+15566 [15562] mov qword [rbp - 0x10], rsi
+15570 [15566] mov qword [rbp - 0x18], rdx
+15574 [15570] cmp qword [rbp - 0x10], 0
+15579 [15574] jne 0x3ce3
+15581 [15579] mov rax, qword [rbp - 8]
+15585 [15581] jmp 0x3d1d
+15587 [] mov rax, qword [rbp - 0x10]
+15591 [15587] lea rdx, [rax*8]
+15599 [15591] mov rax, qword [rbp - 8]
+15603 [15599] lea rcx, [rdx + rax]
+15607 [15603] mov rdx, qword [rbp - 0x18]
+15611 [15607] mov rax, qword [rbp - 8]
+15615 [15611] mov rsi, rcx
+15618 [15615] mov rdi, rax
+15621 [15618] call method.void_std.__fill_a_long_long__long_long__long_long__long_long__long_long_const_
+15626 [15621] mov rax, qword [rbp - 0x10]
+15630 [15626] lea rdx, [rax*8]
+15638 [15630] mov rax, qword [rbp - 8]
+15642 [15638] add rax, rdx
+15645 [15585 15642] leave
+15646 [15645] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___::_Vector_impl_data._Vector_impl_data__
+**BEGIN: CFG
+14300 [] endbr64
+14304 [14300] push rbp
+14305 [14304] mov rbp, rsp
+14308 [14305] mov qword [rbp - 8], rdi
+14312 [14308] mov rax, qword [rbp - 8]
+14316 [14312] mov qword [rax], 0
+14323 [14316] mov rax, qword [rbp - 8]
+14327 [14323] mov qword [rax + 8], 0
+14335 [14327] mov rax, qword [rbp - 8]
+14339 [14335] mov qword [rax + 0x10], 0
+14347 [14339] nop
+14348 [14347] pop rbp
+14349 [14348] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_int__std::allocator_int___::_Vector_impl._Vector_impl__
+**BEGIN: CFG
+10550 [] endbr64
+10554 [10550] push rbp
+10555 [10554] mov rbp, rsp
+10558 [10555] sub rsp, 0x10
+10562 [10558] mov qword [rbp - 8], rdi
+10566 [10562] mov rax, qword [rbp - 8]
+10570 [10566] mov rdi, rax
+10573 [10570] call method.std::allocator_int_.allocator__
+10578 [10573] mov rax, qword [rbp - 8]
+10582 [10578] mov rdi, rax
+10585 [10582] call method.std::_Vector_base_int__std::allocator_int___::_Vector_impl_data._Vector_impl_data__
+10590 [10585] nop
+10591 [10590] leave
+10592 [10591] ret
+**END: CFG
+
+**FUNC: method.std::allocator_int_.allocator__
+**BEGIN: CFG
+11678 [] endbr64
+11682 [11678] push rbp
+11683 [11682] mov rbp, rsp
+11686 [11683] sub rsp, 0x10
+11690 [11686] mov qword [rbp - 8], rdi
+11694 [11690] mov rax, qword [rbp - 8]
+11698 [11694] mov rdi, rax
+11701 [11698] call method.__gnu_cxx::new_allocator_int_.new_allocator__
+11706 [11701] nop
+11707 [11706] leave
+11708 [11707] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_int_.new_allocator__
+**BEGIN: CFG
+12998 [] endbr64
+13002 [12998] push rbp
+13003 [13002] mov rbp, rsp
+13006 [13003] mov qword [rbp - 8], rdi
+13010 [13006] nop
+13011 [13010] pop rbp
+13012 [13011] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_int__std::allocator_int___::_Vector_impl_data._Vector_impl_data__
+**BEGIN: CFG
+11710 [] endbr64
+11714 [11710] push rbp
+11715 [11714] mov rbp, rsp
+11718 [11715] mov qword [rbp - 8], rdi
+11722 [11718] mov rax, qword [rbp - 8]
+11726 [11722] mov qword [rax], 0
+11733 [11726] mov rax, qword [rbp - 8]
+11737 [11733] mov qword [rax + 8], 0
+11745 [11737] mov rax, qword [rbp - 8]
+11749 [11745] mov qword [rax + 0x10], 0
+11757 [11749] nop
+11758 [11757] pop rbp
+11759 [11758] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___._Vector_base__
+**BEGIN: CFG
+12702 [] endbr64
+12706 [12702] push rbp
+12707 [12706] mov rbp, rsp
+12710 [12707] sub rsp, 0x10
+12714 [12710] mov qword [rbp - 8], rdi
+12718 [12714] mov rax, qword [rbp - 8]
+12722 [12718] mov rdx, qword [rax + 0x10]
+12726 [12722] mov rax, qword [rbp - 8]
+12730 [12726] mov rcx, qword [rax]
+12733 [12730] mov rax, rdx
+12736 [12733] sub rax, rcx
+12739 [12736] sar rax, 3
+12743 [12739] mov rdx, rax
+12746 [12743] mov rax, qword [rbp - 8]
+12750 [12746] mov rcx, qword [rax]
+12753 [12750] mov rax, qword [rbp - 8]
+12757 [12753] mov rsi, rcx
+12760 [12757] mov rdi, rax
+12763 [12760] call method.std::_Vector_base_long_long__std::allocator_long_long___._M_deallocate_long_long__unsigned_long_
+12768 [12763] mov rax, qword [rbp - 8]
+12772 [12768] mov rdi, rax
+12775 [12772] call method.std::_Vector_base_long_long__std::allocator_long_long___::_Vector_impl._Vector_impl__
+12780 [12775] nop
+12781 [12780] leave
+12782 [12781] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___._M_deallocate_long_long__unsigned_long_
+**BEGIN: CFG
+13896 [] endbr64
+13900 [13896] push rbp
+13901 [13900] mov rbp, rsp
+13904 [13901] sub rsp, 0x20
+13908 [13904] mov qword [rbp - 8], rdi
+13912 [13908] mov qword [rbp - 0x10], rsi
+13916 [13912] mov qword [rbp - 0x18], rdx
+13920 [13916] cmp qword [rbp - 0x10], 0
+13925 [13920] je 0x367e
+13927 [13925] mov rax, qword [rbp - 8]
+13931 [13927] mov rdx, qword [rbp - 0x18]
+13935 [13931] mov rcx, qword [rbp - 0x10]
+13939 [13935] mov rsi, rcx
+13942 [13939] mov rdi, rax
+13945 [13942] call method.std::allocator_traits_std::allocator_long_long___.deallocate_std::allocator_long_long___long_long__unsigned_long_
+13950 [13945] nop
+13951 [13950] leave
+13952 [13951] ret
+**END: CFG
+
+**FUNC: method.std::allocator_traits_std::allocator_long_long___.deallocate_std::allocator_long_long___long_long__unsigned_long_
+**BEGIN: CFG
+14405 [] endbr64
+14409 [14405] push rbp
+14410 [14409] mov rbp, rsp
+14413 [14410] sub rsp, 0x20
+14417 [14413] mov qword [rbp - 8], rdi
+14421 [14417] mov qword [rbp - 0x10], rsi
+14425 [14421] mov qword [rbp - 0x18], rdx
+14429 [14425] mov rdx, qword [rbp - 0x18]
+14433 [14429] mov rcx, qword [rbp - 0x10]
+14437 [14433] mov rax, qword [rbp - 8]
+14441 [14437] mov rsi, rcx
+14444 [14441] mov rdi, rax
+14447 [14444] call method.__gnu_cxx::new_allocator_long_long_.deallocate_long_long__unsigned_long_
+14452 [14447] nop
+14453 [14452] leave
+14454 [14453] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_long_long_.deallocate_long_long__unsigned_long_
+**BEGIN: CFG
+14946 [] endbr64
+14950 [14946] push rbp
+14951 [14950] mov rbp, rsp
+14954 [14951] sub rsp, 0x20
+14958 [14954] mov qword [rbp - 8], rdi
+14962 [14958] mov qword [rbp - 0x10], rsi
+14966 [14962] mov qword [rbp - 0x18], rdx
+14970 [14966] mov rax, qword [rbp - 0x18]
+14974 [14970] lea rdx, [rax*8]
+14982 [14974] mov rax, qword [rbp - 0x10]
+14986 [14982] mov rsi, rdx
+14989 [14986] mov rdi, rax
+14992 [14989] call sym.imp.operator_delete_void__unsigned_long_
+14997 [14992] leave
+14998 [14997] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___::_Vector_impl._Vector_impl__
+**BEGIN: CFG
+12568 [] endbr64
+12572 [12568] push rbp
+12573 [12572] mov rbp, rsp
+12576 [12573] sub rsp, 0x10
+12580 [12576] mov qword [rbp - 8], rdi
+12584 [12580] mov rax, qword [rbp - 8]
+12588 [12584] mov rdi, rax
+12591 [12588] call fcn.00002ae4
+12596 [12591] nop
+12597 [12596] leave
+12598 [12597] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___.push_back_int_const_
+**BEGIN: CFG
+10780 [] endbr64
+10784 [10780] push rbp
+10785 [10784] mov rbp, rsp
+10788 [10785] sub rsp, 0x10
+10792 [10788] mov qword [rbp - 8], rdi
+10796 [10792] mov qword [rbp - 0x10], rsi
+10800 [10796] mov rax, qword [rbp - 8]
+10804 [10800] mov rdx, qword [rax + 8]
+10808 [10804] mov rax, qword [rbp - 8]
+10812 [10808] mov rax, qword [rax + 0x10]
+10816 [10812] cmp rdx, rax
+10819 [10816] je 0x2a76
+10821 [10819] mov rax, qword [rbp - 8]
+10825 [10821] mov rcx, qword [rax + 8]
+10829 [10825] mov rax, qword [rbp - 8]
+10833 [10829] mov rdx, qword [rbp - 0x10]
+10837 [10833] mov rsi, rcx
+10840 [10837] mov rdi, rax
+10843 [10840] call method.void_std::allocator_traits_std::allocator_int___.construct_int__int_const__std::allocator_int___int__int_const_
+10848 [10843] mov rax, qword [rbp - 8]
+10852 [10848] mov rax, qword [rax + 8]
+10856 [10852] lea rdx, [rax + 4]
+10860 [10856] mov rax, qword [rbp - 8]
+10864 [10860] mov qword [rax + 8], rdx
+10868 [10864] jmp 0x2a98
+10870 [] mov rax, qword [rbp - 8]
+10874 [10870] mov rdi, rax
+10877 [10874] call method.std::vector_int__std::allocator_int___.end__
+10882 [10877] mov rcx, rax
+10885 [10882] mov rdx, qword [rbp - 0x10]
+10889 [10885] mov rax, qword [rbp - 8]
+10893 [10889] mov rsi, rcx
+10896 [10893] mov rdi, rax
+10899 [10896] call method.void_std::vector_int__std::allocator_int___._M_realloc_insert_int_const____gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_______int_const_
+10904 [10868 10899] nop
+10905 [10904] leave
+10906 [10905] ret
+**END: CFG
+
+**FUNC: method.void_std::allocator_traits_std::allocator_int___.construct_int__int_const__std::allocator_int___int__int_const_
+**BEGIN: CFG
+11898 [] endbr64
+11902 [11898] push rbp
+11903 [11902] mov rbp, rsp
+11906 [11903] sub rsp, 0x20
+11910 [11906] mov qword [rbp - 8], rdi
+11914 [11910] mov qword [rbp - 0x10], rsi
+11918 [11914] mov qword [rbp - 0x18], rdx
+11922 [11918] mov rax, qword [rbp - 0x18]
+11926 [11922] mov rdi, rax
+11929 [11926] call method.int_const_std.forward_int_const__std::remove_reference_int_const_::type_
+11934 [11929] mov rdx, rax
+11937 [11934] mov rcx, qword [rbp - 0x10]
+11941 [11937] mov rax, qword [rbp - 8]
+11945 [11941] mov rsi, rcx
+11948 [11945] mov rdi, rax
+11951 [11948] call method.void___gnu_cxx::new_allocator_int_.construct_int__int_const__int__int_const_
+11956 [11951] nop
+11957 [11956] leave
+11958 [11957] ret
+**END: CFG
+
+**FUNC: method.int_const_std.forward_int_const__std::remove_reference_int_const_::type_
+**BEGIN: CFG
+13105 [] endbr64
+13109 [13105] push rbp
+13110 [13109] mov rbp, rsp
+13113 [13110] mov qword [rbp - 8], rdi
+13117 [13113] mov rax, qword [rbp - 8]
+13121 [13117] pop rbp
+13122 [13121] ret
+**END: CFG
+
+**FUNC: method.void___gnu_cxx::new_allocator_int_.construct_int__int_const__int__int_const_
+**BEGIN: CFG
+13124 [] endbr64
+13128 [13124] push rbp
+13129 [13128] mov rbp, rsp
+13132 [13129] push rbx
+13133 [13132] sub rsp, 0x28
+13137 [13133] mov qword [rbp - 0x18], rdi
+13141 [13137] mov qword [rbp - 0x20], rsi
+13145 [13141] mov qword [rbp - 0x28], rdx
+13149 [13145] mov rax, qword [rbp - 0x28]
+13153 [13149] mov rdi, rax
+13156 [13153] call method.int_const_std.forward_int_const__std::remove_reference_int_const_::type_
+13161 [13156] mov ebx, dword [rax]
+13163 [13161] mov rax, qword [rbp - 0x20]
+13167 [13163] mov rsi, rax
+13170 [13167] mov edi, 4
+13175 [13170] call sym.operator_new_unsigned_long__void_
+13180 [13175] mov dword [rax], ebx
+13182 [13180] nop
+13183 [13182] mov rbx, qword [rbp - 8]
+13187 [13183] leave
+13188 [13187] ret
+**END: CFG
+
+**FUNC: sym.operator_new_unsigned_long__void_
+**BEGIN: CFG
+10115 [] endbr64
+10119 [10115] push rbp
+10120 [10119] mov rbp, rsp
+10123 [10120] mov qword [rbp - 8], rdi
+10127 [10123] mov qword [rbp - 0x10], rsi
+10131 [10127] mov rax, qword [rbp - 0x10]
+10135 [10131] pop rbp
+10136 [10135] ret
+**END: CFG
+
+**FUNC: method.void_std::_Destroy_aux_true_.__destroy_int__int__int_
+**BEGIN: CFG
+14093 [] endbr64
+14097 [14093] push rbp
+14098 [14097] mov rbp, rsp
+14101 [14098] mov qword [rbp - 8], rdi
+14105 [14101] mov qword [rbp - 0x10], rsi
+14109 [14105] nop
+14110 [14109] pop rbp
+14111 [14110] ret
+**END: CFG
+
+**FUNC: method.std::allocator_traits_std::allocator_long_long___.allocate_std::allocator_long_long___unsigned_long_
+**BEGIN: CFG
+14900 [] endbr64
+14904 [14900] push rbp
+14905 [14904] mov rbp, rsp
+14908 [14905] sub rsp, 0x10
+14912 [14908] mov qword [rbp - 8], rdi
+14916 [14912] mov qword [rbp - 0x10], rsi
+14920 [14916] mov rcx, qword [rbp - 0x10]
+14924 [14920] mov rax, qword [rbp - 8]
+14928 [14924] mov edx, 0
+14933 [14928] mov rsi, rcx
+14936 [14933] mov rdi, rax
+14939 [14936] call method.__gnu_cxx::new_allocator_long_long_.allocate_unsigned_long__void_const_
+14944 [14939] leave
+14945 [14944] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_long_long_.allocate_unsigned_long__void_const_
+**BEGIN: CFG
+15290 [] endbr64
+15294 [15290] push rbp
+15295 [15294] mov rbp, rsp
+15298 [15295] sub rsp, 0x20
+15302 [15298] mov qword [rbp - 8], rdi
+15306 [15302] mov qword [rbp - 0x10], rsi
+15310 [15306] mov qword [rbp - 0x18], rdx
+15314 [15310] mov rax, qword [rbp - 8]
+15318 [15314] mov rdi, rax
+15321 [15318] call method.__gnu_cxx::new_allocator_long_long_._M_max_size___const
+15326 [15321] cmp qword [rbp - 0x10], rax
+15330 [15326] seta al
+15333 [15330] movzx eax, al
+15336 [15333] test rax, rax
+15339 [15336] setne al
+15342 [15339] test al, al
+15344 [15342] je 0x3c0c
+15346 [15344] movabs rax, 0x1fffffffffffffff
+15356 [15346] cmp qword [rbp - 0x10], rax
+15360 [15356] jbe 0x3c07
+15362 [15360] call sym.imp.std::__throw_bad_array_new_length__
+15367 [15362] call sym.imp.std::__throw_bad_alloc__
+15372 [15367] mov rax, qword [rbp - 0x10]
+15376 [15372] shl rax, 3
+15380 [15376] mov rdi, rax
+15383 [15380] call sym.imp.operator_new_unsigned_long_
+15388 [15383] nop
+15389 [15388] leave
+15390 [15389] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_long_long_._M_max_size___const
+**BEGIN: CFG
+15266 [] endbr64
+15270 [15266] push rbp
+15271 [15270] mov rbp, rsp
+15274 [15271] mov qword [rbp - 8], rdi
+15278 [15274] movabs rax, 0xfffffffffffffff
+15288 [15278] pop rbp
+15289 [15288] ret
+**END: CFG
+
+**FUNC: method.void_std._Destroy_int__int__int__int__std::allocator_int__
+**BEGIN: CFG
+11852 [] endbr64
+11856 [11852] push rbp
+11857 [11856] mov rbp, rsp
+11860 [11857] sub rsp, 0x20
+11864 [11860] mov qword [rbp - 8], rdi
+11868 [11864] mov qword [rbp - 0x10], rsi
+11872 [11868] mov qword [rbp - 0x18], rdx
+11876 [11872] mov rdx, qword [rbp - 0x10]
+11880 [11876] mov rax, qword [rbp - 8]
+11884 [11880] mov rsi, rdx
+11887 [11884] mov rdi, rax
+11890 [11887] call method.void_std._Destroy_int__int__int_
+11895 [11890] nop
+11896 [11895] leave
+11897 [11896] ret
+**END: CFG
+
+**FUNC: method.void_std._Destroy_int__int__int_
+**BEGIN: CFG
+13063 [] endbr64
+13067 [13063] push rbp
+13068 [13067] mov rbp, rsp
+13071 [13068] sub rsp, 0x10
+13075 [13071] mov qword [rbp - 8], rdi
+13079 [13075] mov qword [rbp - 0x10], rsi
+13083 [13079] mov rdx, qword [rbp - 0x10]
+13087 [13083] mov rax, qword [rbp - 8]
+13091 [13087] mov rsi, rdx
+13094 [13091] mov rdi, rax
+13097 [13094] call method.void_std::_Destroy_aux_true_.__destroy_int__int__int_
+13102 [13097] nop
+13103 [13102] leave
+13104 [13103] ret
+**END: CFG
+
+**FUNC: method.std::allocator_long_long_.allocator_std::allocator_long_long__const_
+**BEGIN: CFG
+13710 [] endbr64
+13714 [13710] push rbp
+13715 [13714] mov rbp, rsp
+13718 [13715] sub rsp, 0x10
+13722 [13718] mov qword [rbp - 8], rdi
+13726 [13722] mov qword [rbp - 0x10], rsi
+13730 [13726] mov rdx, qword [rbp - 0x10]
+13734 [13730] mov rax, qword [rbp - 8]
+13738 [13734] mov rsi, rdx
+13741 [13738] mov rdi, rax
+13744 [13741] call method.__gnu_cxx::new_allocator_long_long_.new_allocator___gnu_cxx::new_allocator_long_long__const_
+13749 [13744] nop
+13750 [13749] leave
+13751 [13750] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_long_long_.new_allocator___gnu_cxx::new_allocator_long_long__const_
+**BEGIN: CFG
+14280 [] endbr64
+14284 [14280] push rbp
+14285 [14284] mov rbp, rsp
+14288 [14285] mov qword [rbp - 8], rdi
+14292 [14288] mov qword [rbp - 0x10], rsi
+14296 [14292] nop
+14297 [14296] pop rbp
+14298 [14297] ret
+**END: CFG
+
+**FUNC: method.std::_Function_base._M_empty___const
+**BEGIN: CFG
+10236 [] endbr64
+10240 [10236] push rbp
+10241 [10240] mov rbp, rsp
+10244 [10241] mov qword [rbp - 8], rdi
+10248 [10244] mov rax, qword [rbp - 8]
+10252 [10248] mov rax, qword [rax + 0x10]
+10256 [10252] test rax, rax
+10259 [10256] sete al
+10262 [10259] pop rbp
+10263 [10262] ret
+**END: CFG
+
+**FUNC: fcn.000029d4
+**BEGIN: CFG
+10708 [] endbr64
+10712 [10708] push rbp
+10713 [10712] mov rbp, rsp
+10716 [10713] sub rsp, 0x10
+10720 [10716] mov qword [rbp - 8], rdi
+10724 [10720] mov rax, qword [rbp - 8]
+10728 [10724] mov rdi, rax
+10731 [10728] call method.std::_Vector_base_int__std::allocator_int___._M_get_Tp_allocator__
+10736 [10731] mov rdx, rax
+10739 [10736] mov rax, qword [rbp - 8]
+10743 [10739] mov rcx, qword [rax + 8]
+10747 [10743] mov rax, qword [rbp - 8]
+10751 [10747] mov rax, qword [rax]
+10754 [10751] mov rsi, rcx
+10757 [10754] mov rdi, rax
+10760 [10757] call method.void_std._Destroy_int__int__int__int__std::allocator_int__
+10765 [10760] mov rax, qword [rbp - 8]
+10769 [10765] mov rdi, rax
+10772 [10769] call method.std::_Vector_base_int__std::allocator_int___._Vector_base__
+10777 [10772] nop
+10778 [10777] leave
+10779 [10778] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_int__std::allocator_int___._M_get_Tp_allocator__
+**BEGIN: CFG
+11834 [] endbr64
+11838 [11834] push rbp
+11839 [11838] mov rbp, rsp
+11842 [11839] mov qword [rbp - 8], rdi
+11846 [11842] mov rax, qword [rbp - 8]
+11850 [11846] pop rbp
+11851 [11850] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_int__std::allocator_int___._Vector_base__
+**BEGIN: CFG
+10626 [] endbr64
+10630 [10626] push rbp
+10631 [10630] mov rbp, rsp
+10634 [10631] sub rsp, 0x10
+10638 [10634] mov qword [rbp - 8], rdi
+10642 [10638] mov rax, qword [rbp - 8]
+10646 [10642] mov rdx, qword [rax + 0x10]
+10650 [10646] mov rax, qword [rbp - 8]
+10654 [10650] mov rcx, qword [rax]
+10657 [10654] mov rax, rdx
+10660 [10657] sub rax, rcx
+10663 [10660] sar rax, 2
+10667 [10663] mov rdx, rax
+10670 [10667] mov rax, qword [rbp - 8]
+10674 [10670] mov rcx, qword [rax]
+10677 [10674] mov rax, qword [rbp - 8]
+10681 [10677] mov rsi, rcx
+10684 [10681] mov rdi, rax
+10687 [10684] call method.std::_Vector_base_int__std::allocator_int___._M_deallocate_int__unsigned_long_
+10692 [10687] mov rax, qword [rbp - 8]
+10696 [10692] mov rdi, rax
+10699 [10696] call sym.std::_Vector_base_int__std::allocator_int___::_Vector_impl::_Vector_impl__
+10704 [10699] nop
+10705 [10704] leave
+10706 [10705] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_int__std::allocator_int___._M_deallocate_int__unsigned_long_
+**BEGIN: CFG
+11776 [] endbr64
+11780 [11776] push rbp
+11781 [11780] mov rbp, rsp
+11784 [11781] sub rsp, 0x20
+11788 [11784] mov qword [rbp - 8], rdi
+11792 [11788] mov qword [rbp - 0x10], rsi
+11796 [11792] mov qword [rbp - 0x18], rdx
+11800 [11796] cmp qword [rbp - 0x10], 0
+11805 [11800] je 0x2e36
+11807 [11805] mov rax, qword [rbp - 8]
+11811 [11807] mov rdx, qword [rbp - 0x18]
+11815 [11811] mov rcx, qword [rbp - 0x10]
+11819 [11815] mov rsi, rcx
+11822 [11819] mov rdi, rax
+11825 [11822] call method.std::allocator_traits_std::allocator_int___.deallocate_std::allocator_int___int__unsigned_long_
+11830 [11825] nop
+11831 [11830] leave
+11832 [11831] ret
+**END: CFG
+
+**FUNC: method.std::allocator_traits_std::allocator_int___.deallocate_std::allocator_int___int__unsigned_long_
+**BEGIN: CFG
+13013 [] endbr64
+13017 [13013] push rbp
+13018 [13017] mov rbp, rsp
+13021 [13018] sub rsp, 0x20
+13025 [13021] mov qword [rbp - 8], rdi
+13029 [13025] mov qword [rbp - 0x10], rsi
+13033 [13029] mov qword [rbp - 0x18], rdx
+13037 [13033] mov rdx, qword [rbp - 0x18]
+13041 [13037] mov rcx, qword [rbp - 0x10]
+13045 [13041] mov rax, qword [rbp - 8]
+13049 [13045] mov rsi, rcx
+13052 [13049] mov rdi, rax
+13055 [13052] call method.__gnu_cxx::new_allocator_int_.deallocate_int__unsigned_long_
+13060 [13055] nop
+13061 [13060] leave
+13062 [13061] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_int_.deallocate_int__unsigned_long_
+**BEGIN: CFG
+14040 [] endbr64
+14044 [14040] push rbp
+14045 [14044] mov rbp, rsp
+14048 [14045] sub rsp, 0x20
+14052 [14048] mov qword [rbp - 8], rdi
+14056 [14052] mov qword [rbp - 0x10], rsi
+14060 [14056] mov qword [rbp - 0x18], rdx
+14064 [14060] mov rax, qword [rbp - 0x18]
+14068 [14064] lea rdx, [rax*4]
+14076 [14068] mov rax, qword [rbp - 0x10]
+14080 [14076] mov rsi, rdx
+14083 [14080] mov rdi, rax
+14086 [14083] call sym.imp.operator_delete_void__unsigned_long_
+14091 [14086] leave
+14092 [14091] ret
+**END: CFG
+
+**FUNC: method.std::vector_long_long__std::allocator_long_long___._S_check_init_len_unsigned_long__std::allocator_long_long__const_
+**BEGIN: CFG
+12433 [] endbr64
+12437 [12433] push rbp
+12438 [12437] mov rbp, rsp
+12441 [12438] push rbx
+12442 [12441] sub rsp, 0x28
+12446 [12442] mov qword [rbp - 0x28], rdi
+12450 [12446] mov qword [rbp - 0x30], rsi
+12454 [12450] mov rax, qword fs:[0x28]
+12463 [12454] mov qword [rbp - 0x18], rax
+12467 [12463] xor eax, eax
+12469 [12467] mov rdx, qword [rbp - 0x30]
+12473 [12469] lea rax, [rbp - 0x19]
+12477 [12473] mov rsi, rdx
+12480 [12477] mov rdi, rax
+12483 [12480] call method.std::allocator_long_long_.allocator_std::allocator_long_long__const_
+12488 [12483] lea rax, [rbp - 0x19]
+12492 [12488] mov rdi, rax
+12495 [12492] call method.std::vector_long_long__std::allocator_long_long___._S_max_size_std::allocator_long_long__const_
+12500 [12495] cmp qword [rbp - 0x28], rax
+12504 [12500] seta bl
+12507 [12504] lea rax, [rbp - 0x19]
+12511 [12507] mov rdi, rax
+12514 [12511] call fcn.00002ae4
+12519 [12514] test bl, bl
+12521 [12519] je 0x30fa
+12523 [12521] lea rax, str.cannot_create_std::vector_larger_than_max_size__
+12530 [12523] mov rdi, rax
+12533 [12530] call sym.imp.std::__throw_length_error_char_const_
+12538 [12533] mov rax, qword [rbp - 0x28]
+12542 [12538] mov rdx, qword [rbp - 0x18]
+12546 [12542] sub rdx, qword fs:[0x28]
+12555 [12546] je 0x3112
+12557 [12555] call sym.imp.__stack_chk_fail
+12562 [12557] mov rbx, qword [rbp - 8]
+12566 [12562] leave
+12567 [12566] ret
+**END: CFG
+
+**FUNC: method.void_std::_Destroy_aux_true_.__destroy_long_long__long_long__long_long_
+**BEGIN: CFG
+14500 [] endbr64
+14504 [14500] push rbp
+14505 [14504] mov rbp, rsp
+14508 [14505] mov qword [rbp - 8], rdi
+14512 [14508] mov qword [rbp - 0x10], rsi
+14516 [14512] nop
+14517 [14516] pop rbp
+14518 [14517] ret
+**END: CFG
+
+**FUNC: method.long_long_std.__addressof_long_long__long_long_
+**BEGIN: CFG
+14999 [] endbr64
+15003 [14999] push rbp
+15004 [15003] mov rbp, rsp
+15007 [15004] mov qword [rbp - 8], rdi
+15011 [15007] mov rax, qword [rbp - 8]
+15015 [15011] pop rbp
+15016 [15015] ret
+**END: CFG
+
+**FUNC: method.void_std::vector_int__std::allocator_int___._M_realloc_insert_int_const____gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_______int_const_
+**BEGIN: CFG
+11960 [] endbr64
+11964 [11960] push rbp
+11965 [11964] mov rbp, rsp
+11968 [11965] push rbx
+11969 [11968] sub rsp, 0x68
+11973 [11969] mov qword [rbp - 0x58], rdi
+11977 [11973] mov qword [rbp - 0x60], rsi
+11981 [11977] mov qword [rbp - 0x68], rdx
+11985 [11981] mov rax, qword fs:[0x28]
+11994 [11985] mov qword [rbp - 0x18], rax
+11998 [11994] xor eax, eax
+12000 [11998] mov rax, qword [rbp - 0x58]
+12004 [12000] lea rdx, str.vector::_M_realloc_insert
+12011 [12004] mov esi, 1
+12016 [12011] mov rdi, rax
+12019 [12016] call method.std::vector_int__std::allocator_int___._M_check_len_unsigned_long__char_const__const
+12024 [12019] mov qword [rbp - 0x48], rax
+12028 [12024] mov rax, qword [rbp - 0x58]
+12032 [12028] mov rax, qword [rax]
+12035 [12032] mov qword [rbp - 0x40], rax
+12039 [12035] mov rax, qword [rbp - 0x58]
+12043 [12039] mov rax, qword [rax + 8]
+12047 [12043] mov qword [rbp - 0x38], rax
+12051 [12047] mov rax, qword [rbp - 0x58]
+12055 [12051] mov rdi, rax
+12058 [12055] call method.std::vector_int__std::allocator_int___.begin__
+12063 [12058] mov qword [rbp - 0x50], rax
+12067 [12063] lea rdx, [rbp - 0x50]
+12071 [12067] lea rax, [rbp - 0x60]
+12075 [12071] mov rsi, rdx
+12078 [12075] mov rdi, rax
+12081 [12078] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____::difference_type___gnu_cxx::operator__int__std::vector_int__std.allocator_int________gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int______const____gn
+12086 [12081] mov qword [rbp - 0x30], rax
+12090 [12086] mov rax, qword [rbp - 0x58]
+12094 [12090] mov rdx, qword [rbp - 0x48]
+12098 [12094] mov rsi, rdx
+12101 [12098] mov rdi, rax
+12104 [12101] call method.std::_Vector_base_int__std::allocator_int___._M_allocate_unsigned_long_
+12109 [12104] mov qword [rbp - 0x28], rax
+12113 [12109] mov rax, qword [rbp - 0x28]
+12117 [12113] mov qword [rbp - 0x20], rax
+12121 [12117] mov rax, qword [rbp - 0x68]
+12125 [12121] mov rdi, rax
+12128 [12125] call method.int_const_std.forward_int_const__std::remove_reference_int_const_::type_
+12133 [12128] mov rdx, rax
+12136 [12133] mov rax, qword [rbp - 0x30]
+12140 [12136] lea rcx, [rax*4]
+12148 [12140] mov rax, qword [rbp - 0x28]
+12152 [12148] add rcx, rax
+12155 [12152] mov rax, qword [rbp - 0x58]
+12159 [12155] mov rsi, rcx
+12162 [12159] mov rdi, rax
+12165 [12162] call method.void_std::allocator_traits_std::allocator_int___.construct_int__int_const__std::allocator_int___int__int_const_
+12170 [12165] mov qword [rbp - 0x20], 0
+12178 [12170] mov rax, qword [rbp - 0x58]
+12182 [12178] mov rdi, rax
+12185 [12182] call method.std::_Vector_base_int__std::allocator_int___._M_get_Tp_allocator__
+12190 [12185] mov rbx, rax
+12193 [12190] lea rax, [rbp - 0x60]
+12197 [12193] mov rdi, rax
+12200 [12197] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.base___const
+12205 [12200] mov rsi, qword [rax]
+12208 [12205] mov rdx, qword [rbp - 0x28]
+12212 [12208] mov rax, qword [rbp - 0x40]
+12216 [12212] mov rcx, rbx
+12219 [12216] mov rdi, rax
+12222 [12219] call method.std::vector_int__std::allocator_int___._S_relocate_int__int__int__std::allocator_int__
+12227 [12222] mov qword [rbp - 0x20], rax
+12231 [12227] add qword [rbp - 0x20], 4
+12236 [12231] mov rax, qword [rbp - 0x58]
+12240 [12236] mov rdi, rax
+12243 [12240] call method.std::_Vector_base_int__std::allocator_int___._M_get_Tp_allocator__
+12248 [12243] mov rbx, rax
+12251 [12248] lea rax, [rbp - 0x60]
+12255 [12251] mov rdi, rax
+12258 [12255] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.base___const
+12263 [12258] mov rax, qword [rax]
+12266 [12263] mov rdx, qword [rbp - 0x20]
+12270 [12266] mov rsi, qword [rbp - 0x38]
+12274 [12270] mov rcx, rbx
+12277 [12274] mov rdi, rax
+12280 [12277] call method.std::vector_int__std::allocator_int___._S_relocate_int__int__int__std::allocator_int__
+12285 [12280] mov qword [rbp - 0x20], rax
+12289 [12285] mov rax, qword [rbp - 0x58]
+12293 [12289] mov rdx, qword [rbp - 0x58]
+12297 [12293] mov rdx, qword [rdx + 0x10]
+12301 [12297] sub rdx, qword [rbp - 0x40]
+12305 [12301] sar rdx, 2
+12309 [12305] mov rcx, qword [rbp - 0x40]
+12313 [12309] mov rsi, rcx
+12316 [12313] mov rdi, rax
+12319 [12316] call method.std::_Vector_base_int__std::allocator_int___._M_deallocate_int__unsigned_long_
+12324 [12319] mov rax, qword [rbp - 0x58]
+12328 [12324] mov rdx, qword [rbp - 0x28]
+12332 [12328] mov qword [rax], rdx
+12335 [12332] mov rax, qword [rbp - 0x58]
+12339 [12335] mov rdx, qword [rbp - 0x20]
+12343 [12339] mov qword [rax + 8], rdx
+12347 [12343] mov rax, qword [rbp - 0x48]
+12351 [12347] lea rdx, [rax*4]
+12359 [12351] mov rax, qword [rbp - 0x28]
+12363 [12359] add rdx, rax
+12366 [12363] mov rax, qword [rbp - 0x58]
+12370 [12366] mov qword [rax + 0x10], rdx
+12374 [12370] nop
+12375 [12374] mov rax, qword [rbp - 0x18]
+12379 [12375] sub rax, qword fs:[0x28]
+12388 [12379] je 0x306b
+12390 [12388] call sym.imp.__stack_chk_fail
+12395 [12390] mov rbx, qword [rbp - 8]
+12399 [12395] leave
+12400 [12399] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___._M_check_len_unsigned_long__char_const__const
+**BEGIN: CFG
+13190 [] endbr64
+13194 [13190] push rbp
+13195 [13194] mov rbp, rsp
+13198 [13195] push rbx
+13199 [13198] sub rsp, 0x48
+13203 [13199] mov qword [rbp - 0x38], rdi
+13207 [13203] mov qword [rbp - 0x40], rsi
+13211 [13207] mov qword [rbp - 0x48], rdx
+13215 [13211] mov rax, qword fs:[0x28]
+13224 [13215] mov qword [rbp - 0x18], rax
+13228 [13224] xor eax, eax
+13230 [13228] mov rax, qword [rbp - 0x38]
+13234 [13230] mov rdi, rax
+13237 [13234] call method.std::vector_int__std::allocator_int___.max_size___const
+13242 [13237] mov rbx, rax
+13245 [13242] mov rax, qword [rbp - 0x38]
+13249 [13245] mov rdi, rax
+13252 [13249] call method.std::vector_int__std::allocator_int___.size___const
+13257 [13252] sub rbx, rax
+13260 [13257] mov rdx, rbx
+13263 [13260] mov rax, qword [rbp - 0x40]
+13267 [13263] cmp rdx, rax
+13270 [13267] setb al
+13273 [13270] test al, al
+13275 [13273] je 0x33e9
+13277 [13275] mov rax, qword [rbp - 0x48]
+13281 [13277] mov rdi, rax
+13284 [13281] call sym.imp.std::__throw_length_error_char_const_
+13289 [13284] mov rax, qword [rbp - 0x38]
+13293 [13289] mov rdi, rax
+13296 [13293] call method.std::vector_int__std::allocator_int___.size___const
+13301 [13296] mov rbx, rax
+13304 [13301] mov rax, qword [rbp - 0x38]
+13308 [13304] mov rdi, rax
+13311 [13308] call method.std::vector_int__std::allocator_int___.size___const
+13316 [13311] mov qword [rbp - 0x28], rax
+13320 [13316] lea rdx, [rbp - 0x40]
+13324 [13320] lea rax, [rbp - 0x28]
+13328 [13324] mov rsi, rdx
+13331 [13328] mov rdi, rax
+13334 [13331] call method.unsigned_long_const_std.max_unsigned_long__unsigned_long_const__unsigned_long_const_
+13339 [13334] mov rax, qword [rax]
+13342 [13339] add rax, rbx
+13345 [13342] mov qword [rbp - 0x20], rax
+13349 [13345] mov rax, qword [rbp - 0x38]
+13353 [13349] mov rdi, rax
+13356 [13353] call method.std::vector_int__std::allocator_int___.size___const
+13361 [13356] cmp qword [rbp - 0x20], rax
+13365 [13361] jb 0x3449
+13367 [13365] mov rax, qword [rbp - 0x38]
+13371 [13367] mov rdi, rax
+13374 [13371] call method.std::vector_int__std::allocator_int___.max_size___const
+13379 [13374] cmp qword [rbp - 0x20], rax
+13383 [13379] jbe 0x3457
+13385 [13383] mov rax, qword [rbp - 0x38]
+13389 [13385] mov rdi, rax
+13392 [13389] call method.std::vector_int__std::allocator_int___.max_size___const
+13397 [13392] jmp 0x345b
+13399 [] mov rax, qword [rbp - 0x20]
+13403 [13397 13399] mov rdx, qword [rbp - 0x18]
+13407 [13403] sub rdx, qword fs:[0x28]
+13416 [13407] je 0x346f
+13418 [13416] call sym.imp.__stack_chk_fail
+13423 [13418] mov rbx, qword [rbp - 8]
+13427 [13423] leave
+13428 [13427] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___.begin__
+**BEGIN: CFG
+11210 [] endbr64
+11214 [11210] push rbp
+11215 [11214] mov rbp, rsp
+11218 [11215] sub rsp, 0x20
+11222 [11218] mov qword [rbp - 0x18], rdi
+11226 [11222] mov rax, qword fs:[0x28]
+11235 [11226] mov qword [rbp - 8], rax
+11239 [11235] xor eax, eax
+11241 [11239] mov rdx, qword [rbp - 0x18]
+11245 [11241] lea rax, [rbp - 0x10]
+11249 [11245] mov rsi, rdx
+11252 [11249] mov rdi, rax
+11255 [11252] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.__normal_iterator_int_const_
+11260 [11255] mov rax, qword [rbp - 0x10]
+11264 [11260] mov rdx, qword [rbp - 8]
+11268 [11264] sub rdx, qword fs:[0x28]
+11277 [11268] je 0x2c14
+11279 [11277] call sym.imp.__stack_chk_fail
+11284 [11279] leave
+11285 [11284] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.__normal_iterator_int_const_
+**BEGIN: CFG
+12916 [] endbr64
+12920 [12916] push rbp
+12921 [12920] mov rbp, rsp
+12924 [12921] mov qword [rbp - 8], rdi
+12928 [12924] mov qword [rbp - 0x10], rsi
+12932 [12928] mov rax, qword [rbp - 0x10]
+12936 [12932] mov rdx, qword [rax]
+12939 [12936] mov rax, qword [rbp - 8]
+12943 [12939] mov qword [rax], rdx
+12946 [12943] nop
+12947 [12946] pop rbp
+12948 [12947] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____::difference_type___gnu_cxx::operator__int__std::vector_int__std.allocator_int________gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int______const____gn
+**BEGIN: CFG
+13429 [] endbr64
+13433 [13429] push rbp
+13434 [13433] mov rbp, rsp
+13437 [13434] push rbx
+13438 [13437] sub rsp, 0x18
+13442 [13438] mov qword [rbp - 0x18], rdi
+13446 [13442] mov qword [rbp - 0x20], rsi
+13450 [13446] mov rax, qword [rbp - 0x18]
+13454 [13450] mov rdi, rax
+13457 [13454] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.base___const
+13462 [13457] mov rbx, qword [rax]
+13465 [13462] mov rax, qword [rbp - 0x20]
+13469 [13465] mov rdi, rax
+13472 [13469] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.base___const
+13477 [13472] mov rdx, qword [rax]
+13480 [13477] mov rax, rbx
+13483 [13480] sub rax, rdx
+13486 [13483] sar rax, 2
+13490 [13486] mov rbx, qword [rbp - 8]
+13494 [13490] leave
+13495 [13494] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.base___const
+**BEGIN: CFG
+12950 [] endbr64
+12954 [12950] push rbp
+12955 [12954] mov rbp, rsp
+12958 [12955] mov qword [rbp - 8], rdi
+12962 [12958] mov rax, qword [rbp - 8]
+12966 [12962] pop rbp
+12967 [12966] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___._S_relocate_int__int__int__std::allocator_int__
+**BEGIN: CFG
+13551 [] endbr64
+13555 [13551] push rbp
+13556 [13555] mov rbp, rsp
+13559 [13556] sub rsp, 0x20
+13563 [13559] mov qword [rbp - 8], rdi
+13567 [13563] mov qword [rbp - 0x10], rsi
+13571 [13567] mov qword [rbp - 0x18], rdx
+13575 [13571] mov qword [rbp - 0x20], rcx
+13579 [13575] mov rcx, qword [rbp - 0x20]
+13583 [13579] mov rdx, qword [rbp - 0x18]
+13587 [13583] mov rsi, qword [rbp - 0x10]
+13591 [13587] mov rax, qword [rbp - 8]
+13595 [13591] mov rdi, rax
+13598 [13595] call method.std::vector_int__std::allocator_int___._S_do_relocate_int__int__int__std::allocator_int___std::integral_constant_bool__true__
+13603 [13598] leave
+13604 [13603] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___._S_do_relocate_int__int__int__std::allocator_int___std::integral_constant_bool__true__
+**BEGIN: CFG
+14196 [] endbr64
+14200 [14196] push rbp
+14201 [14200] mov rbp, rsp
+14204 [14201] sub rsp, 0x20
+14208 [14204] mov qword [rbp - 8], rdi
+14212 [14208] mov qword [rbp - 0x10], rsi
+14216 [14212] mov qword [rbp - 0x18], rdx
+14220 [14216] mov qword [rbp - 0x20], rcx
+14224 [14220] mov rcx, qword [rbp - 0x20]
+14228 [14224] mov rdx, qword [rbp - 0x18]
+14232 [14228] mov rsi, qword [rbp - 0x10]
+14236 [14232] mov rax, qword [rbp - 8]
+14240 [14236] mov rdi, rax
+14243 [14240] call method.int_std::__relocate_a_int__int__std.allocator_int____int__int__int__std::allocator_int__
+14248 [14243] leave
+14249 [14248] ret
+**END: CFG
+
+**FUNC: method.int_std::__relocate_a_int__int__std.allocator_int____int__int__int__std::allocator_int__
+**BEGIN: CFG
+14767 [] endbr64
+14771 [14767] push rbp
+14772 [14771] mov rbp, rsp
+14775 [14772] push r12
+14777 [14775] push rbx
+14778 [14777] sub rsp, 0x20
+14782 [14778] mov qword [rbp - 0x18], rdi
+14786 [14782] mov qword [rbp - 0x20], rsi
+14790 [14786] mov qword [rbp - 0x28], rdx
+14794 [14790] mov qword [rbp - 0x30], rcx
+14798 [14794] mov rax, qword [rbp - 0x28]
+14802 [14798] mov rdi, rax
+14805 [14802] call method.int_std.__niter_base_int__int_
+14810 [14805] mov r12, rax
+14813 [14810] mov rax, qword [rbp - 0x20]
+14817 [14813] mov rdi, rax
+14820 [14817] call method.int_std.__niter_base_int__int_
+14825 [14820] mov rbx, rax
+14828 [14825] mov rax, qword [rbp - 0x18]
+14832 [14828] mov rdi, rax
+14835 [14832] call method.int_std.__niter_base_int__int_
+14840 [14835] mov rdi, rax
+14843 [14840] mov rax, qword [rbp - 0x30]
+14847 [14843] mov rcx, rax
+14850 [14847] mov rdx, r12
+14853 [14850] mov rsi, rbx
+14856 [14853] call method.std::enable_if_std::__is_bitwise_relocatable_int__void_::value__int_::type_std.__relocate_a_1_int__int__int__int__int__std::allocator_int__
+14861 [14856] add rsp, 0x20
+14865 [14861] pop rbx
+14866 [14865] pop r12
+14868 [14866] pop rbp
+14869 [14868] ret
+**END: CFG
+
+**FUNC: method.int_std.__niter_base_int__int_
+**BEGIN: CFG
+15144 [] endbr64
+15148 [15144] push rbp
+15149 [15148] mov rbp, rsp
+15152 [15149] mov qword [rbp - 8], rdi
+15156 [15152] mov rax, qword [rbp - 8]
+15160 [15156] pop rbp
+15161 [15160] ret
+**END: CFG
+
+**FUNC: method.std::enable_if_std::__is_bitwise_relocatable_int__void_::value__int_::type_std.__relocate_a_1_int__int__int__int__int__std::allocator_int__
+**BEGIN: CFG
+15162 [] endbr64
+15166 [15162] push rbp
+15167 [15166] mov rbp, rsp
+15170 [15167] sub rsp, 0x30
+15174 [15170] mov qword [rbp - 0x18], rdi
+15178 [15174] mov qword [rbp - 0x20], rsi
+15182 [15178] mov qword [rbp - 0x28], rdx
+15186 [15182] mov qword [rbp - 0x30], rcx
+15190 [15186] mov rax, qword [rbp - 0x20]
+15194 [15190] sub rax, qword [rbp - 0x18]
+15198 [15194] sar rax, 2
+15202 [15198] mov qword [rbp - 8], rax
+15206 [15202] cmp qword [rbp - 8], 0
+15211 [15206] jle 0x3b8c
+15213 [15211] mov rax, qword [rbp - 8]
+15217 [15213] lea rdx, [rax*4]
+15225 [15217] mov rcx, qword [rbp - 0x18]
+15229 [15225] mov rax, qword [rbp - 0x28]
+15233 [15229] mov rsi, rcx
+15236 [15233] mov rdi, rax
+15239 [15236] call sym.imp.memmove
+15244 [15239] mov rax, qword [rbp - 8]
+15248 [15244] lea rdx, [rax*4]
+15256 [15248] mov rax, qword [rbp - 0x28]
+15260 [15256] add rax, rdx
+15263 [15260] leave
+15264 [15263] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___._Vector_base_unsigned_long__std::allocator_long_long__const_
+**BEGIN: CFG
+12600 [] endbr64
+12604 [12600] push rbp
+12605 [12604] mov rbp, rsp
+12608 [12605] push rbx
+12609 [12608] sub rsp, 0x28
+12613 [12609] mov qword [rbp - 0x18], rdi
+12617 [12613] mov qword [rbp - 0x20], rsi
+12621 [12617] mov qword [rbp - 0x28], rdx
+12625 [12621] mov rax, qword [rbp - 0x18]
+12629 [12625] mov rdx, qword [rbp - 0x28]
+12633 [12629] mov rsi, rdx
+12636 [12633] mov rdi, rax
+12639 [12636] call method.std::_Vector_base_long_long__std::allocator_long_long___::_Vector_impl._Vector_impl_std::allocator_long_long__const_
+12644 [12639] mov rdx, qword [rbp - 0x20]
+12648 [12644] mov rax, qword [rbp - 0x18]
+12652 [12648] mov rsi, rdx
+12655 [12652] mov rdi, rax
+12658 [12655] call method.std::_Vector_base_long_long__std::allocator_long_long___._M_create_storage_unsigned_long_
+12663 [12658] jmp 0x3197
+12695 [12663] mov rbx, qword [rbp - 8]
+12699 [12695] leave
+12700 [12699] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___::_Vector_impl._Vector_impl_std::allocator_long_long__const_
+**BEGIN: CFG
+13752 [] endbr64
+13756 [13752] push rbp
+13757 [13756] mov rbp, rsp
+13760 [13757] sub rsp, 0x10
+13764 [13760] mov qword [rbp - 8], rdi
+13768 [13764] mov qword [rbp - 0x10], rsi
+13772 [13768] mov rdx, qword [rbp - 0x10]
+13776 [13772] mov rax, qword [rbp - 8]
+13780 [13776] mov rsi, rdx
+13783 [13780] mov rdi, rax
+13786 [13783] call method.std::allocator_long_long_.allocator_std::allocator_long_long__const_
+13791 [13786] mov rax, qword [rbp - 8]
+13795 [13791] mov rdi, rax
+13798 [13795] call method.std::_Vector_base_long_long__std::allocator_long_long___::_Vector_impl_data._Vector_impl_data__
+13803 [13798] nop
+13804 [13803] leave
+13805 [13804] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___._M_create_storage_unsigned_long_
+**BEGIN: CFG
+13806 [] endbr64
+13810 [13806] push rbp
+13811 [13810] mov rbp, rsp
+13814 [13811] sub rsp, 0x10
+13818 [13814] mov qword [rbp - 8], rdi
+13822 [13818] mov qword [rbp - 0x10], rsi
+13826 [13822] mov rdx, qword [rbp - 0x10]
+13830 [13826] mov rax, qword [rbp - 8]
+13834 [13830] mov rsi, rdx
+13837 [13834] mov rdi, rax
+13840 [13837] call method.std::_Vector_base_long_long__std::allocator_long_long___._M_allocate_unsigned_long_
+13845 [13840] mov rdx, qword [rbp - 8]
+13849 [13845] mov qword [rdx], rax
+13852 [13849] mov rax, qword [rbp - 8]
+13856 [13852] mov rdx, qword [rax]
+13859 [13856] mov rax, qword [rbp - 8]
+13863 [13859] mov qword [rax + 8], rdx
+13867 [13863] mov rax, qword [rbp - 8]
+13871 [13867] mov rdx, qword [rax]
+13874 [13871] mov rax, qword [rbp - 0x10]
+13878 [13874] shl rax, 3
+13882 [13878] add rdx, rax
+13885 [13882] mov rax, qword [rbp - 8]
+13889 [13885] mov qword [rax + 0x10], rdx
+13893 [13889] nop
+13894 [13893] leave
+13895 [13894] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___._M_allocate_unsigned_long_
+**BEGIN: CFG
+14350 [] endbr64
+14354 [14350] push rbp
+14355 [14354] mov rbp, rsp
+14358 [14355] sub rsp, 0x10
+14362 [14358] mov qword [rbp - 8], rdi
+14366 [14362] mov qword [rbp - 0x10], rsi
+14370 [14366] cmp qword [rbp - 0x10], 0
+14375 [14370] je 0x383e
+14377 [14375] mov rax, qword [rbp - 8]
+14381 [14377] mov rdx, qword [rbp - 0x10]
+14385 [14381] mov rsi, rdx
+14388 [14385] mov rdi, rax
+14391 [14388] call method.std::allocator_traits_std::allocator_long_long___.allocate_std::allocator_long_long___unsigned_long_
+14396 [14391] jmp 0x3843
+14398 [] mov eax, 0
+14403 [14396 14398] leave
+14404 [14403] ret
+**END: CFG
+
+**FUNC: sym.std::_Vector_base_int__std::allocator_int___::_Vector_base__
+**BEGIN: CFG
+10344 [] endbr64
+10348 [10344] push rbp
+10349 [10348] mov rbp, rsp
+10352 [10349] sub rsp, 0x10
+10356 [10352] mov qword [rbp - 8], rdi
+10360 [10356] mov rax, qword [rbp - 8]
+10364 [10360] mov rdi, rax
+10367 [10364] call method.std::_Vector_base_int__std::allocator_int___::_Vector_impl._Vector_impl__
+10372 [10367] nop
+10373 [10372] leave
+10374 [10373] ret
+**END: CFG
+
+**FUNC: method.void_std._Destroy_long_long__long_long__long_long__long_long__std::allocator_long_long__
+**BEGIN: CFG
+12870 [] endbr64
+12874 [12870] push rbp
+12875 [12874] mov rbp, rsp
+12878 [12875] sub rsp, 0x20
+12882 [12878] mov qword [rbp - 8], rdi
+12886 [12882] mov qword [rbp - 0x10], rsi
+12890 [12886] mov qword [rbp - 0x18], rdx
+12894 [12890] mov rdx, qword [rbp - 0x10]
+12898 [12894] mov rax, qword [rbp - 8]
+12902 [12898] mov rsi, rdx
+12905 [12902] mov rdi, rax
+12908 [12905] call method.void_std._Destroy_long_long__long_long__long_long_
+12913 [12908] nop
+12914 [12913] leave
+12915 [12914] ret
+**END: CFG
+
+**FUNC: method.void_std._Destroy_long_long__long_long__long_long_
+**BEGIN: CFG
+13998 [] endbr64
+14002 [13998] push rbp
+14003 [14002] mov rbp, rsp
+14006 [14003] sub rsp, 0x10
+14010 [14006] mov qword [rbp - 8], rdi
+14014 [14010] mov qword [rbp - 0x10], rsi
+14018 [14014] mov rdx, qword [rbp - 0x10]
+14022 [14018] mov rax, qword [rbp - 8]
+14026 [14022] mov rsi, rdx
+14029 [14026] mov rdi, rax
+14032 [14029] call method.void_std::_Destroy_aux_true_.__destroy_long_long__long_long__long_long_
+14037 [14032] nop
+14038 [14037] leave
+14039 [14038] ret
+**END: CFG
+
+**FUNC: main
+**BEGIN: CFG
+8475 [] endbr64
+8479 [8475] push rbp
+8480 [8479] mov rbp, rsp
+8483 [8480] sub rsp, 0x10
+8487 [8483] mov rax, qword fs:[0x28]
+8496 [8487] mov qword [rbp - 8], rax
+8500 [8496] xor eax, eax
+8502 [8500] mov edi, 0
+8507 [8502] call sym.imp.std::ios_base::sync_with_stdio_bool_
+8512 [8507] mov esi, 0
+8517 [8512] lea rax, [0x00007170]
+8524 [8517] mov rdi, rax
+8527 [8524] call sym.imp.std::basic_ios_char__std::char_traits_char___::tie_std::ostream_
+8532 [8527] mov dword [rbp - 0xc], 1
+8539 [8532] lea rax, [rbp - 0xc]
+8543 [8539] mov rsi, rax
+8546 [8543] lea rax, [obj.std::cin]
+8553 [8546] mov rdi, rax
+8556 [8553] call sym.imp.std::istream::operator___int_
+8561 [8556] jmp 0x2178
+8563 [] call sym.solve__
+8568 [8561 8563] mov eax, dword [rbp - 0xc]
+8571 [8568] lea edx, [rax - 1]
+8574 [8571] mov dword [rbp - 0xc], edx
+8577 [8574] test eax, eax
+8579 [8577] setne al
+8582 [8579] test al, al
+8584 [8582] jne 0x2173
+8586 [8584] mov eax, 0
+8591 [8586] mov rdx, qword [rbp - 8]
+8595 [8591] sub rdx, qword fs:[0x28]
+8604 [8595] je 0x21a3
+8606 [8604] call sym.imp.__stack_chk_fail
+8611 [8606] leave
+8612 [8611] ret
+**END: CFG
+
+**FUNC: method.std.function_my__int__int__::function__
+**BEGIN: CFG
+10408 [] endbr64
+10412 [10408] push rbp
+10413 [10412] mov rbp, rsp
+10416 [10413] sub rsp, 0x10
+10420 [10416] mov qword [rbp - 8], rdi
+10424 [10420] mov rax, qword [rbp - 8]
+10428 [10424] mov rdi, rax
+10431 [10428] call fcn.000027be
+10436 [10431] nop
+10437 [10436] leave
+10438 [10437] ret
+**END: CFG
+
+**FUNC: method.void_std.__fill_a_long_long__long_long__long_long__long_long__long_long_const_
+**BEGIN: CFG
+15647 [] endbr64
+15651 [15647] push rbp
+15652 [15651] mov rbp, rsp
+15655 [15652] sub rsp, 0x20
+15659 [15655] mov qword [rbp - 8], rdi
+15663 [15659] mov qword [rbp - 0x10], rsi
+15667 [15663] mov qword [rbp - 0x18], rdx
+15671 [15667] mov rdx, qword [rbp - 0x18]
+15675 [15671] mov rcx, qword [rbp - 0x10]
+15679 [15675] mov rax, qword [rbp - 8]
+15683 [15679] mov rsi, rcx
+15686 [15683] mov rdi, rax
+15689 [15686] call method.__gnu_cxx::__enable_if_std::__is_scalar_long_long_::__value__void_::__type_std.__fill_a1_long_long__long_long__long_long__long_long__long_long_const_
+15694 [15689] nop
+15695 [15694] leave
+15696 [15695] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::__enable_if_std::__is_scalar_long_long_::__value__void_::__type_std.__fill_a1_long_long__long_long__long_long__long_long__long_long_const_
+**BEGIN: CFG
+15697 [] endbr64
+15701 [15697] push rbp
+15702 [15701] mov rbp, rsp
+15705 [15702] mov qword [rbp - 0x18], rdi
+15709 [15705] mov qword [rbp - 0x20], rsi
+15713 [15709] mov qword [rbp - 0x28], rdx
+15717 [15713] mov rax, qword [rbp - 0x28]
+15721 [15717] mov rax, qword [rax]
+15724 [15721] mov qword [rbp - 8], rax
+15728 [15724] jmp 0x3d82
+15730 [] mov rax, qword [rbp - 0x18]
+15734 [15730] mov rdx, qword [rbp - 8]
+15738 [15734] mov qword [rax], rdx
+15741 [15738] add qword [rbp - 0x18], 8
+15746 [15728 15741] mov rax, qword [rbp - 0x18]
+15750 [15746] cmp rax, qword [rbp - 0x20]
+15754 [15750] jne 0x3d72
+15756 [15754] nop
+15757 [15756] nop
+15758 [15757] pop rbp
+15759 [15758] ret
+**END: CFG
+
+**FUNC: method.std::_Function_base._Function_base__
+**BEGIN: CFG
+10504 [] endbr64
+10508 [10504] push rbp
+10509 [10508] mov rbp, rsp
+10512 [10509] mov qword [rbp - 8], rdi
+10516 [10512] mov rax, qword [rbp - 8]
+10520 [10516] mov qword [rax], 0
+10527 [10520] mov qword [rax + 8], 0
+10535 [10527] mov rax, qword [rbp - 8]
+10539 [10535] mov qword [rax + 0x10], 0
+10547 [10539] nop
+10548 [10547] pop rbp
+10549 [10548] ret
+**END: CFG
+
+**FUNC: method.long_long_std.__uninitialized_default_n_long_long__unsigned_long__long_long__unsigned_long_
+**BEGIN: CFG
+14455 [] endbr64
+14459 [14455] push rbp
+14460 [14459] mov rbp, rsp
+14463 [14460] sub rsp, 0x20
+14467 [14463] mov qword [rbp - 0x18], rdi
+14471 [14467] mov qword [rbp - 0x20], rsi
+14475 [14471] mov byte [rbp - 1], 1
+14479 [14475] mov rdx, qword [rbp - 0x20]
+14483 [14479] mov rax, qword [rbp - 0x18]
+14487 [14483] mov rsi, rdx
+14490 [14487] mov rdi, rax
+14493 [14490] call method.long_long_std::__uninitialized_default_n_1_true_.__uninit_default_n_long_long__unsigned_long__long_long__unsigned_long_
+14498 [14493] leave
+14499 [14498] ret
+**END: CFG
+
+**FUNC: method.long_long_std::__uninitialized_default_n_1_true_.__uninit_default_n_long_long__unsigned_long__long_long__unsigned_long_
+**BEGIN: CFG
+15017 [] endbr64
+15021 [15017] push rbp
+15022 [15021] mov rbp, rsp
+15025 [15022] sub rsp, 0x20
+15029 [15025] mov qword [rbp - 0x18], rdi
+15033 [15029] mov qword [rbp - 0x20], rsi
+15037 [15033] cmp qword [rbp - 0x20], 0
+15042 [15037] je 0x3b04
+15044 [15042] mov rax, qword [rbp - 0x18]
+15048 [15044] mov rdi, rax
+15051 [15048] call method.long_long_std.__addressof_long_long__long_long_
+15056 [15051] mov qword [rbp - 8], rax
+15060 [15056] mov rax, qword [rbp - 8]
+15064 [15060] mov rdi, rax
+15067 [15064] call method.void_std._Construct_long_long__long_long_
+15072 [15067] add qword [rbp - 0x18], 8
+15077 [15072] mov rax, qword [rbp - 0x20]
+15081 [15077] lea rcx, [rax - 1]
+15085 [15081] mov rdx, qword [rbp - 8]
+15089 [15085] mov rax, qword [rbp - 0x18]
+15093 [15089] mov rsi, rcx
+15096 [15093] mov rdi, rax
+15099 [15096] call method.long_long_std.fill_n_long_long__unsigned_long__long_long__long_long__unsigned_long__long_long_const_
+15104 [15099] mov qword [rbp - 0x18], rax
+15108 [15104] mov rax, qword [rbp - 0x18]
+15112 [15108] leave
+15113 [15112] ret
+**END: CFG
+
+**FUNC: method.void_std._Construct_long_long__long_long_
+**BEGIN: CFG
+15391 [] endbr64
+15395 [15391] push rbp
+15396 [15395] mov rbp, rsp
+15399 [15396] sub rsp, 0x10
+15403 [15399] mov qword [rbp - 8], rdi
+15407 [15403] mov rax, qword [rbp - 8]
+15411 [15407] mov rsi, rax
+15414 [15411] mov edi, 8
+15419 [15414] call sym.operator_new_unsigned_long__void_
+15424 [15419] mov qword [rax], 0
+15431 [15424] nop
+15432 [15431] leave
+15433 [15432] ret
+**END: CFG
+
+**FUNC: sym._fini
+**BEGIN: CFG
+15760 [] endbr64
+15764 [15760] sub rsp, 8
+15768 [15764] add rsp, 8
+15772 [15768] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___.end__
+**BEGIN: CFG
+11286 [] endbr64
+11290 [11286] push rbp
+11291 [11290] mov rbp, rsp
+11294 [11291] sub rsp, 0x20
+11298 [11294] mov qword [rbp - 0x18], rdi
+11302 [11298] mov rax, qword fs:[0x28]
+11311 [11302] mov qword [rbp - 8], rax
+11315 [11311] xor eax, eax
+11317 [11315] mov rax, qword [rbp - 0x18]
+11321 [11317] lea rdx, [rax + 8]
+11325 [11321] lea rax, [rbp - 0x10]
+11329 [11325] mov rsi, rdx
+11332 [11329] mov rdi, rax
+11335 [11332] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.__normal_iterator_int_const_
+11340 [11335] mov rax, qword [rbp - 0x10]
+11344 [11340] mov rdx, qword [rbp - 8]
+11348 [11344] sub rdx, qword fs:[0x28]
+11357 [11348] je 0x2c64
+11359 [11357] call sym.imp.__stack_chk_fail
+11364 [11359] leave
+11365 [11364] ret
+**END: CFG
+
+**FUNC: method.unsigned_long_const_std.min_unsigned_long__unsigned_long_const__unsigned_long_const_
+**BEGIN: CFG
+10264 [] endbr64
+10268 [10264] push rbp
+10269 [10268] mov rbp, rsp
+10272 [10269] mov qword [rbp - 8], rdi
+10276 [10272] mov qword [rbp - 0x10], rsi
+10280 [10276] mov rax, qword [rbp - 0x10]
+10284 [10280] mov rdx, qword [rax]
+10287 [10284] mov rax, qword [rbp - 8]
+10291 [10287] mov rax, qword [rax]
+10294 [10291] cmp rdx, rax
+10297 [10294] jae 0x2841
+10299 [10297] mov rax, qword [rbp - 0x10]
+10303 [10299] jmp 0x2845
+10305 [] mov rax, qword [rbp - 8]
+10309 [10303 10305] pop rbp
+10310 [10309] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.operator__
+**BEGIN: CFG
+11430 [] endbr64
+11434 [11430] push rbp
+11435 [11434] mov rbp, rsp
+11438 [11435] mov qword [rbp - 8], rdi
+11442 [11438] mov rax, qword [rbp - 8]
+11446 [11442] mov rax, qword [rax]
+11449 [11446] lea rdx, [rax + 4]
+11453 [11449] mov rax, qword [rbp - 8]
+11457 [11453] mov qword [rax], rdx
+11460 [11457] mov rax, qword [rbp - 8]
+11464 [11460] pop rbp
+11465 [11464] ret
+**END: CFG
+
+**FUNC: method.std::vector_long_long__std::allocator_long_long___.vector__
+**BEGIN: CFG
+11138 [] endbr64
+11142 [11138] push rbp
+11143 [11142] mov rbp, rsp
+11146 [11143] sub rsp, 0x10
+11150 [11146] mov qword [rbp - 8], rdi
+11154 [11150] mov rax, qword [rbp - 8]
+11158 [11154] mov rdi, rax
+11161 [11158] call method.std::_Vector_base_long_long__std::allocator_long_long___._M_get_Tp_allocator__
+11166 [11161] mov rdx, rax
+11169 [11166] mov rax, qword [rbp - 8]
+11173 [11169] mov rcx, qword [rax + 8]
+11177 [11173] mov rax, qword [rbp - 8]
+11181 [11177] mov rax, qword [rax]
+11184 [11181] mov rsi, rcx
+11187 [11184] mov rdi, rax
+11190 [11187] call method.void_std._Destroy_long_long__long_long__long_long__long_long__std::allocator_long_long__
+11195 [11190] mov rax, qword [rbp - 8]
+11199 [11195] mov rdi, rax
+11202 [11199] call method.std::_Vector_base_long_long__std::allocator_long_long___._Vector_base__
+11207 [11202] nop
+11208 [11207] leave
+11209 [11208] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_long_long__std::allocator_long_long___._M_get_Tp_allocator__
+**BEGIN: CFG
+12852 [] endbr64
+12856 [12852] push rbp
+12857 [12856] mov rbp, rsp
+12860 [12857] mov qword [rbp - 8], rdi
+12864 [12860] mov rax, qword [rbp - 8]
+12868 [12864] pop rbp
+12869 [12868] ret
+**END: CFG
+
+**FUNC: method.std::vector_long_long__std::allocator_long_long___._M_default_initialize_unsigned_long_
+**BEGIN: CFG
+12784 [] endbr64
+12788 [12784] push rbp
+12789 [12788] mov rbp, rsp
+12792 [12789] sub rsp, 0x10
+12796 [12792] mov qword [rbp - 8], rdi
+12800 [12796] mov qword [rbp - 0x10], rsi
+12804 [12800] mov rax, qword [rbp - 8]
+12808 [12804] mov rdi, rax
+12811 [12808] call method.std::_Vector_base_long_long__std::allocator_long_long___._M_get_Tp_allocator__
+12816 [12811] mov rdx, rax
+12819 [12816] mov rax, qword [rbp - 8]
+12823 [12819] mov rax, qword [rax]
+12826 [12823] mov rcx, qword [rbp - 0x10]
+12830 [12826] mov rsi, rcx
+12833 [12830] mov rdi, rax
+12836 [12833] call method.long_long_std.__uninitialized_default_n_a_long_long__unsigned_long__long_long__long_long__unsigned_long__std::allocator_long_long__
+12841 [12836] mov rdx, qword [rbp - 8]
+12845 [12841] mov qword [rdx + 8], rax
+12849 [12845] nop
+12850 [12849] leave
+12851 [12850] ret
+**END: CFG
+
+**FUNC: method.long_long_std.__uninitialized_default_n_a_long_long__unsigned_long__long_long__long_long__unsigned_long__std::allocator_long_long__
+**BEGIN: CFG
+13953 [] endbr64
+13957 [13953] push rbp
+13958 [13957] mov rbp, rsp
+13961 [13958] sub rsp, 0x20
+13965 [13961] mov qword [rbp - 8], rdi
+13969 [13965] mov qword [rbp - 0x10], rsi
+13973 [13969] mov qword [rbp - 0x18], rdx
+13977 [13973] mov rdx, qword [rbp - 0x10]
+13981 [13977] mov rax, qword [rbp - 8]
+13985 [13981] mov rsi, rdx
+13988 [13985] mov rdi, rax
+13991 [13988] call method.long_long_std.__uninitialized_default_n_long_long__unsigned_long__long_long__unsigned_long_
+13996 [13991] leave
+13997 [13996] ret
+**END: CFG
+
+**FUNC: method.std::allocator_traits_std::allocator_long_long___.max_size_std::allocator_long_long__const_
+**BEGIN: CFG
+14250 [] endbr64
+14254 [14250] push rbp
+14255 [14254] mov rbp, rsp
+14258 [14255] sub rsp, 0x10
+14262 [14258] mov qword [rbp - 8], rdi
+14266 [14262] mov rax, qword [rbp - 8]
+14270 [14266] mov rdi, rax
+14273 [14270] call method.__gnu_cxx::new_allocator_long_long_.max_size___const
+14278 [14273] leave
+14279 [14278] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_long_long_.max_size___const
+**BEGIN: CFG
+14870 [] endbr64
+14874 [14870] push rbp
+14875 [14874] mov rbp, rsp
+14878 [14875] sub rsp, 0x10
+14882 [14878] mov qword [rbp - 8], rdi
+14886 [14882] mov rax, qword [rbp - 8]
+14890 [14886] mov rdi, rax
+14893 [14890] call method.__gnu_cxx::new_allocator_long_long_._M_max_size___const
+14898 [14893] leave
+14899 [14898] ret
+**END: CFG
+
+**FUNC: sym.makemy_long_long__long_long__long_long_
+**BEGIN: CFG
+4970 [] endbr64
+4974 [4970] push rbp
+4975 [4974] mov rbp, rsp
+4978 [4975] mov qword [rbp - 8], rdi
+4982 [4978] mov qword [rbp - 0x10], rsi
+4986 [4982] mov qword [rbp - 0x18], rdx
+4990 [4986] mov qword [rbp - 0x20], rcx
+4994 [4990] mov rax, qword [rbp - 8]
+4998 [4994] mov rdx, qword [rbp - 0x10]
+5002 [4998] mov qword [rax], rdx
+5005 [5002] mov rax, qword [rbp - 8]
+5009 [5005] mov rdx, qword [rbp - 0x18]
+5013 [5009] mov qword [rax + 8], rdx
+5017 [5013] mov rax, qword [rbp - 8]
+5021 [5017] mov rdx, qword [rbp - 0x20]
+5025 [5021] mov qword [rax + 0x10], rdx
+5029 [5025] nop
+5030 [5029] mov rax, qword [rbp - 8]
+5034 [5030] pop rbp
+5035 [5034] ret
+**END: CFG
+
+**FUNC: sym.inv_long_long_
+**BEGIN: CFG
+5237 [] endbr64
+5241 [5237] push rbp
+5242 [5241] mov rbp, rsp
+5245 [5242] sub rsp, 8
+5249 [5245] mov qword [rbp - 8], rdi
+5253 [5249] mov rax, qword [rbp - 8]
+5257 [5253] mov esi, 0x3b7fffff
+5262 [5257] mov rdi, rax
+5265 [5262] call sym.powp_long_long__long_long_
+5270 [5265] leave
+5271 [5270] ret
+**END: CFG
+
+**FUNC: sym.powp_long_long__long_long_
+**BEGIN: CFG
+5036 [] endbr64
+5040 [5036] push rbp
+5041 [5040] mov rbp, rsp
+5044 [5041] mov qword [rbp - 0x18], rdi
+5048 [5044] mov qword [rbp - 0x20], rsi
+5052 [5048] mov qword [rbp - 8], 1
+5060 [5052] jmp 0x1464
+5065 [] mov rax, qword [rbp - 0x20]
+5069 [5065] and eax, 1
+5072 [5069] test rax, rax
+5075 [5072] je 0x141b
+5077 [5075] mov rax, qword [rbp - 8]
+5081 [5077] imul rax, qword [rbp - 0x18]
+5086 [5081] mov rcx, rax
+5089 [5086] movabs rdx, 0x226b9021d778331
+5099 [5089] mov rax, rcx
+5102 [5099] imul rdx
+5105 [5102] mov rax, rdx
+5108 [5105] sar rax, 0x17
+5112 [5108] mov rdx, rcx
+5115 [5112] sar rdx, 0x3f
+5119 [5115] sub rax, rdx
+5122 [5119] mov qword [rbp - 8], rax
+5126 [5122] mov rax, qword [rbp - 8]
+5130 [5126] imul rdx, rax, 0x3b800001
+5137 [5130] mov rax, rcx
+5140 [5137] sub rax, rdx
+5143 [5140] mov qword [rbp - 8], rax
+5147 [5143] mov rax, qword [rbp - 0x18]
+5151 [5147] imul rax, rax
+5155 [5151] mov rcx, rax
+5158 [5155] movabs rdx, 0x226b9021d778331
+5168 [5158] mov rax, rcx
+5171 [5168] imul rdx
+5174 [5171] mov rax, rdx
+5177 [5174] sar rax, 0x17
+5181 [5177] mov rdx, rcx
+5184 [5181] sar rdx, 0x3f
+5188 [5184] sub rax, rdx
+5191 [5188] mov qword [rbp - 0x18], rax
+5195 [5191] mov rax, qword [rbp - 0x18]
+5199 [5195] imul rdx, rax, 0x3b800001
+5206 [5199] mov rax, rcx
+5209 [5206] sub rax, rdx
+5212 [5209] mov qword [rbp - 0x18], rax
+5216 [5212] sar qword [rbp - 0x20], 1
+5220 [5060 5216] cmp qword [rbp - 0x20], 0
+5225 [5220] jne 0x13c9
+5231 [5225] mov rax, qword [rbp - 8]
+5235 [5231] pop rbp
+5236 [5235] ret
+**END: CFG
+
+**FUNC: method.std::vector_long_long__std::allocator_long_long___.vector_unsigned_long__std::allocator_long_long__const_
+**BEGIN: CFG
+11012 [] endbr64
+11016 [11012] push rbp
+11017 [11016] mov rbp, rsp
+11020 [11017] push rbx
+11021 [11020] sub rsp, 0x28
+11025 [11021] mov qword [rbp - 0x18], rdi
+11029 [11025] mov qword [rbp - 0x20], rsi
+11033 [11029] mov qword [rbp - 0x28], rdx
+11037 [11033] mov rbx, qword [rbp - 0x18]
+11041 [11037] mov rdx, qword [rbp - 0x28]
+11045 [11041] mov rax, qword [rbp - 0x20]
+11049 [11045] mov rsi, rdx
+11052 [11049] mov rdi, rax
+11055 [11052] call method.std::vector_long_long__std::allocator_long_long___._S_check_init_len_unsigned_long__std::allocator_long_long__const_
+11060 [11055] mov rcx, rax
+11063 [11060] mov rax, qword [rbp - 0x28]
+11067 [11063] mov rdx, rax
+11070 [11067] mov rsi, rcx
+11073 [11070] mov rdi, rbx
+11076 [11073] call method.std::_Vector_base_long_long__std::allocator_long_long___._Vector_base_unsigned_long__std::allocator_long_long__const_
+11081 [11076] mov rdx, qword [rbp - 0x20]
+11085 [11081] mov rax, qword [rbp - 0x18]
+11089 [11085] mov rsi, rdx
+11092 [11089] mov rdi, rax
+11095 [11092] call method.std::vector_long_long__std::allocator_long_long___._M_default_initialize_unsigned_long_
+11100 [11095] jmp 0x2b7c
+11132 [11100] mov rbx, qword [rbp - 8]
+11136 [11132] leave
+11137 [11136] ret
+**END: CFG
+
+**FUNC: method.std::allocator_long_long_.allocator__
+**BEGIN: CFG
+10948 [] endbr64
+10952 [10948] push rbp
+10953 [10952] mov rbp, rsp
+10956 [10953] sub rsp, 0x10
+10960 [10956] mov qword [rbp - 8], rdi
+10964 [10960] mov rax, qword [rbp - 8]
+10968 [10964] mov rdi, rax
+10971 [10968] call method.__gnu_cxx::new_allocator_long_long_.new_allocator__
+10976 [10971] nop
+10977 [10976] leave
+10978 [10977] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_long_long_.new_allocator__
+**BEGIN: CFG
+12402 [] endbr64
+12406 [12402] push rbp
+12407 [12406] mov rbp, rsp
+12410 [12407] mov qword [rbp - 8], rdi
+12414 [12410] nop
+12415 [12414] pop rbp
+12416 [12415] ret
+**END: CFG
+
+**FUNC: sym._init
+**BEGIN: CFG
+4096 [] endbr64
+4100 [4096] sub rsp, 8
+4104 [4100] mov rax, qword [reloc.__gmon_start__]
+4111 [4104] test rax, rax
+4114 [4111] je 0x1016
+4116 [4114] call rax
+4118 [4116] add rsp, 8
+4122 [4118] ret
+**END: CFG
+
+**FUNC: method.std::_Vector_base_int__std::allocator_int___._M_get_Tp_allocator___const
+**BEGIN: CFG
+14624 [] endbr64
+14628 [14624] push rbp
+14629 [14628] mov rbp, rsp
+14632 [14629] mov qword [rbp - 8], rdi
+14636 [14632] mov rax, qword [rbp - 8]
+14640 [14636] pop rbp
+14641 [14640] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___.max_size___const
+**BEGIN: CFG
+14112 [] endbr64
+14116 [14112] push rbp
+14117 [14116] mov rbp, rsp
+14120 [14117] sub rsp, 0x10
+14124 [14120] mov qword [rbp - 8], rdi
+14128 [14124] mov rax, qword [rbp - 8]
+14132 [14128] mov rdi, rax
+14135 [14132] call method.std::_Vector_base_int__std::allocator_int___._M_get_Tp_allocator___const
+14140 [14135] mov rdi, rax
+14143 [14140] call method.std::vector_int__std::allocator_int___._S_max_size_std::allocator_int__const_
+14148 [14143] leave
+14149 [14148] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___._S_max_size_std::allocator_int__const_
+**BEGIN: CFG
+14519 [] endbr64
+14523 [14519] push rbp
+14524 [14523] mov rbp, rsp
+14527 [14524] sub rsp, 0x30
+14531 [14527] mov qword [rbp - 0x28], rdi
+14535 [14531] mov rax, qword fs:[0x28]
+14544 [14535] mov qword [rbp - 8], rax
+14548 [14544] xor eax, eax
+14550 [14548] movabs rax, 0x1fffffffffffffff
+14560 [14550] mov qword [rbp - 0x18], rax
+14564 [14560] mov rax, qword [rbp - 0x28]
+14568 [14564] mov rdi, rax
+14571 [14568] call method.std::allocator_traits_std::allocator_int___.max_size_std::allocator_int__const_
+14576 [14571] mov qword [rbp - 0x10], rax
+14580 [14576] lea rdx, [rbp - 0x10]
+14584 [14580] lea rax, [rbp - 0x18]
+14588 [14584] mov rsi, rdx
+14591 [14588] mov rdi, rax
+14594 [14591] call method.unsigned_long_const_std.min_unsigned_long__unsigned_long_const__unsigned_long_const_
+14599 [14594] mov rax, qword [rax]
+14602 [14599] mov rdx, qword [rbp - 8]
+14606 [14602] sub rdx, qword fs:[0x28]
+14615 [14606] je 0x391e
+14617 [14615] call sym.imp.__stack_chk_fail
+14622 [14617] leave
+14623 [14622] ret
+**END: CFG
+
+**FUNC: method.std::allocator_traits_std::allocator_int___.max_size_std::allocator_int__const_
+**BEGIN: CFG
+15114 [] endbr64
+15118 [15114] push rbp
+15119 [15118] mov rbp, rsp
+15122 [15119] sub rsp, 0x10
+15126 [15122] mov qword [rbp - 8], rdi
+15130 [15126] mov rax, qword [rbp - 8]
+15134 [15130] mov rdi, rax
+15137 [15134] call method.__gnu_cxx::new_allocator_int_.max_size___const
+15142 [15137] leave
+15143 [15142] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::new_allocator_int_.max_size___const
+**BEGIN: CFG
+15506 [] endbr64
+15510 [15506] push rbp
+15511 [15510] mov rbp, rsp
+15514 [15511] sub rsp, 0x10
+15518 [15514] mov qword [rbp - 8], rdi
+15522 [15518] mov rax, qword [rbp - 8]
+15526 [15522] mov rdi, rax
+15529 [15526] call method.__gnu_cxx::new_allocator_int_._M_max_size___const
+15534 [15529] leave
+15535 [15534] ret
+**END: CFG
+
+**FUNC: sym.solve__
+**BEGIN: CFG
+7483 [] endbr64
+7487 [7483] push rbp
+7488 [7487] mov rbp, rsp
+7491 [7488] push r15
+7493 [7491] push r14
+7495 [7493] push r13
+7497 [7495] push r12
+7499 [7497] push rbx
+7500 [7499] sub rsp, 0x88
+7507 [7500] mov rax, qword fs:[0x28]
+7516 [7507] mov qword [rbp - 0x38], rax
+7520 [7516] xor eax, eax
+7522 [7520] mov rax, rsp
+7525 [7522] mov qword [rbp - 0xa8], rax
+7532 [7525] lea rax, [rbp - 0x9c]
+7539 [7532] mov rsi, rax
+7542 [7539] lea rax, [obj.std::cin]
+7549 [7542] mov rdi, rax
+7552 [7549] call sym.imp.std::istream::operator___int_
+7557 [7552] mov ebx, dword [rbp - 0x9c]
+7563 [7557] movsxd rax, ebx
+7566 [7563] sub rax, 1
+7570 [7566] mov qword [rbp - 0x90], rax
+7577 [7570] movsxd rax, ebx
+7580 [7577] mov r14, rax
+7583 [7580] mov r15d, 0
+7589 [7583] imul rdx, r15, 0xc0
+7596 [7589] imul rax, r14, 0
+7600 [7596] lea rcx, [rdx + rax]
+7604 [7600] mov eax, 0xc0
+7609 [7604] mul r14
+7612 [7609] add rcx, rdx
+7615 [7612] mov rdx, rcx
+7618 [7615] movsxd rdx, ebx
+7621 [7618] mov rax, rdx
+7624 [7621] add rax, rax
+7627 [7624] add rax, rdx
+7630 [7627] shl rax, 3
+7634 [7630] movsxd rax, ebx
+7637 [7634] mov r12, rax
+7640 [7637] mov r13d, 0
+7646 [7640] imul rdx, r13, 0xc0
+7653 [7646] imul rax, r12, 0
+7657 [7653] lea rcx, [rdx + rax]
+7661 [7657] mov eax, 0xc0
+7666 [7661] mul r12
+7669 [7666] add rcx, rdx
+7672 [7669] mov rdx, rcx
+7675 [7672] movsxd rdx, ebx
+7678 [7675] mov rax, rdx
+7681 [7678] add rax, rax
+7684 [7681] add rax, rdx
+7687 [7684] shl rax, 3
+7691 [7687] mov rdx, rax
+7694 [7691] mov eax, 0x10
+7699 [7694] sub rax, 1
+7703 [7699] add rax, rdx
+7706 [7703] mov esi, 0x10
+7711 [7706] mov edx, 0
+7716 [7711] div rsi
+7719 [7716] imul rax, rax, 0x10
+7723 [7719] mov rcx, rax
+7726 [7723] and rcx, 0xfffffffffffff000
+7733 [7726] mov rdx, rsp
+7736 [7733] sub rdx, rcx
+7739 [7736 7760] cmp rsp, rdx
+7742 [7739] je 0x1e52
+7744 [7742] sub rsp, sym._init
+7751 [7744] or qword [rsp + method.std::basic_ostream_char__std::char_traits_char____std::endl_char__std.char_traits_char____std::basic_ostream_char__std::char_traits_char____], 0
+7760 [7751] jmp 0x1e3b
+7762 [] mov rdx, rax
+7765 [7762] and edx, 0xfff
+7771 [7765] sub rsp, rdx
+7774 [7771] mov rdx, rax
+7777 [7774] and edx, 0xfff
+7783 [7777] test rdx, rdx
+7786 [7783] je 0x1e7c
+7788 [7786] and eax, 0xfff
+7793 [7788] sub rax, 8
+7797 [7793] add rax, rsp
+7800 [7797] or qword [rax], 0
+7804 [7800] mov rax, rsp
+7807 [7804] add rax, 7
+7811 [7807] shr rax, 3
+7815 [7811] shl rax, 3
+7819 [7815] mov qword [rbp - 0x88], rax
+7826 [7819] mov rax, qword [rbp - 0x88]
+7833 [7826] movsxd rdx, ebx
+7836 [7833] lea r12, [rdx - 1]
+7840 [7836] mov r13, rax
+7843 [7840] jmp 0x1eb5
+7845 [] mov rdi, r13
+7848 [7845] call method.std::vector_int__std::allocator_int___.vector__
+7853 [7848] add r13, 0x18
+7857 [7853] sub r12, 1
+7861 [7843 7857] test r12, r12
+7864 [7861] jns 0x1ea5
+7866 [7864] mov dword [rbp - 0x94], 0
+7876 [7866] jmp 0x1f71
+7881 [] lea rax, [rbp - 0x98]
+7888 [7881] mov rsi, rax
+7891 [7888] lea rax, [obj.std::cin]
+7898 [7891] mov rdi, rax
+7901 [7898] call sym.imp.std::istream::operator___int_
+7906 [7901] mov rdx, rax
+7909 [7906] lea rax, [rbp - 0x80]
+7913 [7909] mov rsi, rax
+7916 [7913] mov rdi, rdx
+7919 [7916] call sym.imp.std::istream::operator___int_
+7924 [7919] mov eax, dword [rbp - 0x98]
+7930 [7924] sub eax, 1
+7933 [7930] mov dword [rbp - 0x98], eax
+7939 [7933] mov eax, dword [rbp - 0x80]
+7942 [7939] sub eax, 1
+7945 [7942] mov dword [rbp - 0x80], eax
+7948 [7945] mov eax, dword [rbp - 0x98]
+7954 [7948] movsxd rdx, eax
+7957 [7954] mov rax, rdx
+7960 [7957] add rax, rax
+7963 [7960] add rax, rdx
+7966 [7963] shl rax, 3
+7970 [7966] mov rdx, qword [rbp - 0x88]
+7977 [7970] add rdx, rax
+7980 [7977] lea rax, [rbp - 0x80]
+7984 [7980] mov rsi, rax
+7987 [7984] mov rdi, rdx
+7990 [7987] call method.std::vector_int__std::allocator_int___.push_back_int_const_
+7995 [7990] mov eax, dword [rbp - 0x80]
+7998 [7995] movsxd rdx, eax
+8001 [7998] mov rax, rdx
+8004 [8001] add rax, rax
+8007 [8004] add rax, rdx
+8010 [8007] shl rax, 3
+8014 [8010] mov rdx, qword [rbp - 0x88]
+8021 [8014] add rdx, rax
+8024 [8021] lea rax, [rbp - 0x98]
+8031 [8024] mov rsi, rax
+8034 [8031] mov rdi, rdx
+8037 [8034] call method.std::vector_int__std::allocator_int___.push_back_int_const_
+8042 [8037] add dword [rbp - 0x94], 1
+8049 [7876 8042] mov eax, dword [rbp - 0x9c]
+8055 [8049] sub eax, 1
+8058 [8055] cmp dword [rbp - 0x94], eax
+8064 [8058] jl 0x1ec9
+8070 [8064] mov rax, qword [rbp - 0x88]
+8077 [8070] mov qword [rbp - 0x80], rax
+8081 [8077] movsxd rax, ebx
+8084 [8081] sub rax, 1
+8088 [8084] mov qword [rbp - 0x78], rax
+8092 [8088] lea rax, [rbp - 0x60]
+8096 [8092] mov qword [rbp - 0x70], rax
+8100 [8096] lea rdx, [rbp - 0x80]
+8104 [8100] lea rax, [rbp - 0x60]
+8108 [8104] mov rsi, rdx
+8111 [8108] mov rdi, rax
+8114 [8111] call method.std.function_my__int__int__::function_solve__::lambda_int__int_1__void__solve__::lambda_int__int_1_
+8119 [8114] lea rax, [rbp - 0x80]
+8123 [8119] lea rsi, [rbp - 0x60]
+8127 [8123] mov ecx, 0xffffffff
+8132 [8127] mov edx, 0
+8137 [8132] mov rdi, rax
+8140 [8137] call method.std.function_my__int__int__::operator___int__int__const
+8145 [8140] mov rdx, qword [rbp - 0x80]
+8149 [8145] mov rax, qword [rbp - 0x78]
+8153 [8149] add rdx, rax
+8156 [8153] mov rax, qword [rbp - 0x70]
+8160 [8156] lea rcx, [rdx + rax]
+8164 [8160] movabs rdx, 0x226b9021d778331
+8174 [8164] mov rax, rcx
+8177 [8174] imul rdx
+8180 [8177] mov rax, rdx
+8183 [8180] sar rax, 0x17
+8187 [8183] mov rdx, rcx
+8190 [8187] sar rdx, 0x3f
+8194 [8190] sub rax, rdx
+8197 [8194] imul rdx, rax, 0x3b800001
+8204 [8197] mov rax, rcx
+8207 [8204] sub rax, rdx
+8210 [8207] mov rsi, rax
+8213 [8210] lea rax, [obj.std::cout]
+8220 [8213] mov rdi, rax
+8223 [8220] call sym.imp.std::ostream::operator___long_long_
+8228 [8223] mov rdx, qword [reloc.std::basic_ostream_char__std::char_traits_char____std::endl_char__std::char_traits_char____std::basic_ostream_char__std::char_traits_char____]
+8235 [8228] mov rsi, rdx
+8238 [8235] mov rdi, rax
+8241 [8238] call sym.imp.std::ostream::operator___std::ostream____std::ostream__
+8246 [8241] mov rax, qword [reloc.std::basic_ostream_char__std::char_traits_char____std::endl_char__std::char_traits_char____std::basic_ostream_char__std::char_traits_char____]
+8253 [8246] mov rsi, rax
+8256 [8253] lea rax, [obj.std::cout]
+8263 [8256] mov rdi, rax
+8266 [8263] call sym.imp.std::ostream::operator___std::ostream____std::ostream__
+8271 [8266] lea rax, [rbp - 0x60]
+8275 [8271] mov rdi, rax
+8278 [8275] call method.std.function_my__int__int__::function__
+8283 [8278] movsxd rdx, ebx
+8286 [8283] mov rax, rdx
+8289 [8286] add rax, rax
+8292 [8289] add rax, rdx
+8295 [8292] shl rax, 3
+8299 [8295] mov rdx, rax
+8302 [8299] mov rax, qword [rbp - 0x88]
+8309 [8302] lea rbx, [rdx + rax]
+8313 [8309 8334] cmp qword [rbp - 0x88], rbx
+8320 [8313] je 0x2090
+8322 [8320] sub rbx, 0x18
+8326 [8322] mov rdi, rbx
+8329 [8326] call fcn.000029d4
+8334 [8329] jmp 0x2079
+8336 [] nop
+8337 [8336] mov rsp, qword [rbp - 0xa8]
+8344 [8337] nop
+8345 [8344] mov rax, qword [rbp - 0x38]
+8349 [8345] sub rax, qword fs:[0x28]
+8358 [8349] je 0x210c
+8360 [8358] jmp 0x2107
+8455 [8360] call sym.imp.__stack_chk_fail
+8460 [8455] lea rsp, [rbp - 0x28]
+8464 [8460] pop rbx
+8465 [8464] pop r12
+8467 [8465] pop r13
+8469 [8467] pop r14
+8471 [8469] pop r15
+8473 [8471] pop rbp
+8474 [8473] ret
+**END: CFG
+
+**FUNC: method.unsigned_long_const_std.max_unsigned_long__unsigned_long_const__unsigned_long_const_
+**BEGIN: CFG
+10439 [] endbr64
+10443 [10439] push rbp
+10444 [10443] mov rbp, rsp
+10447 [10444] mov qword [rbp - 8], rdi
+10451 [10447] mov qword [rbp - 0x10], rsi
+10455 [10451] mov rax, qword [rbp - 8]
+10459 [10455] mov rdx, qword [rax]
+10462 [10459] mov rax, qword [rbp - 0x10]
+10466 [10462] mov rax, qword [rax]
+10469 [10466] cmp rdx, rax
+10472 [10469] jae 0x28f0
+10474 [10472] mov rax, qword [rbp - 0x10]
+10478 [10474] jmp 0x28f4
+10480 [] mov rax, qword [rbp - 8]
+10484 [10478 10480] pop rbp
+10485 [10484] ret
+**END: CFG
+
+**FUNC: method.std::vector_long_long__std::allocator_long_long___._S_max_size_std::allocator_long_long__const_
+**BEGIN: CFG
+13605 [] endbr64
+13609 [13605] push rbp
+13610 [13609] mov rbp, rsp
+13613 [13610] sub rsp, 0x30
+13617 [13613] mov qword [rbp - 0x28], rdi
+13621 [13617] mov rax, qword fs:[0x28]
+13630 [13621] mov qword [rbp - 8], rax
+13634 [13630] xor eax, eax
+13636 [13634] movabs rax, 0xfffffffffffffff
+13646 [13636] mov qword [rbp - 0x18], rax
+13650 [13646] mov rax, qword [rbp - 0x28]
+13654 [13650] mov rdi, rax
+13657 [13654] call method.std::allocator_traits_std::allocator_long_long___.max_size_std::allocator_long_long__const_
+13662 [13657] mov qword [rbp - 0x10], rax
+13666 [13662] lea rdx, [rbp - 0x10]
+13670 [13666] lea rax, [rbp - 0x18]
+13674 [13670] mov rsi, rdx
+13677 [13674] mov rdi, rax
+13680 [13677] call method.unsigned_long_const_std.min_unsigned_long__unsigned_long_const__unsigned_long_const_
+13685 [13680] mov rax, qword [rax]
+13688 [13685] mov rdx, qword [rbp - 8]
+13692 [13688] sub rdx, qword fs:[0x28]
+13701 [13692] je 0x358c
+13703 [13701] call sym.imp.__stack_chk_fail
+13708 [13703] leave
+13709 [13708] ret
+**END: CFG
+
+**FUNC: method.std::vector_long_long__std::allocator_long_long___.operator___unsigned_long_
+**BEGIN: CFG
+11642 [] endbr64
+11646 [11642] push rbp
+11647 [11646] mov rbp, rsp
+11650 [11647] mov qword [rbp - 8], rdi
+11654 [11650] mov qword [rbp - 0x10], rsi
+11658 [11654] mov rax, qword [rbp - 8]
+11662 [11658] mov rdx, qword [rax]
+11665 [11662] mov rax, qword [rbp - 0x10]
+11669 [11665] shl rax, 3
+11673 [11669] add rax, rdx
+11676 [11673] pop rbp
+11677 [11676] ret
+**END: CFG
+
+**FUNC: method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.operator___const
+**BEGIN: CFG
+11466 [] endbr64
+11470 [11466] push rbp
+11471 [11470] mov rbp, rsp
+11474 [11471] mov qword [rbp - 8], rdi
+11478 [11474] mov rax, qword [rbp - 8]
+11482 [11478] mov rax, qword [rax]
+11485 [11482] pop rbp
+11486 [11485] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___.vector__
+**BEGIN: CFG
+10376 [] endbr64
+10380 [10376] push rbp
+10381 [10380] mov rbp, rsp
+10384 [10381] sub rsp, 0x10
+10388 [10384] mov qword [rbp - 8], rdi
+10392 [10388] mov rax, qword [rbp - 8]
+10396 [10392] mov rdi, rax
+10399 [10396] call sym.std::_Vector_base_int__std::allocator_int___::_Vector_base__
+10404 [10399] nop
+10405 [10404] leave
+10406 [10405] ret
+**END: CFG
+
+**FUNC: sym.mydiv_long_long__long_long_
+**BEGIN: CFG
+5272 [] endbr64
+5276 [5272] push rbp
+5277 [5276] mov rbp, rsp
+5280 [5277] sub rsp, 0x10
+5284 [5280] mov qword [rbp - 8], rdi
+5288 [5284] mov qword [rbp - 0x10], rsi
+5292 [5288] mov rax, qword [rbp - 0x10]
+5296 [5292] mov rdi, rax
+5299 [5296] call sym.inv_long_long_
+5304 [5299] imul rax, qword [rbp - 8]
+5309 [5304] mov rcx, rax
+5312 [5309] movabs rdx, 0x226b9021d778331
+5322 [5312] mov rax, rcx
+5325 [5322] imul rdx
+5328 [5325] mov rax, rdx
+5331 [5328] sar rax, 0x17
+5335 [5331] mov rdx, rcx
+5338 [5335] sar rdx, 0x3f
+5342 [5338] sub rax, rdx
+5345 [5342] imul rdx, rax, 0x3b800001
+5352 [5345] mov rax, rcx
+5355 [5352] sub rax, rdx
+5358 [5355] leave
+5359 [5358] ret
+**END: CFG
+
+**FUNC: method.std.function_my__int__int__::operator___int__int__const
+**BEGIN: CFG
+11488 [] endbr64
+11492 [11488] push rbp
+11493 [11492] mov rbp, rsp
+11496 [11493] push r12
+11498 [11496] push rbx
+11499 [11498] sub rsp, 0x30
+11503 [11499] mov qword [rbp - 0x28], rdi
+11507 [11503] mov qword [rbp - 0x30], rsi
+11511 [11507] mov dword [rbp - 0x34], edx
+11514 [11511] mov dword [rbp - 0x38], ecx
+11517 [11514] mov rax, qword fs:[0x28]
+11526 [11517] mov qword [rbp - 0x18], rax
+11530 [11526] xor eax, eax
+11532 [11530] mov rax, qword [rbp - 0x30]
+11536 [11532] mov rdi, rax
+11539 [11536] call method.std::_Function_base._M_empty___const
+11544 [11539] test al, al
+11546 [11544] je 0x2d21
+11548 [11546] call sym.imp.std::__throw_bad_function_call__
+11553 [11548] mov rax, qword [rbp - 0x30]
+11557 [11553] mov rbx, qword [rax + 0x18]
+11561 [11557] lea rax, [rbp - 0x38]
+11565 [11561] mov rdi, rax
+11568 [11565] call method.int_std.forward_int__std::remove_reference_int_::type_
+11573 [11568] mov r12, rax
+11576 [11573] lea rax, [rbp - 0x34]
+11580 [11576] mov rdi, rax
+11583 [11580] call method.int_std.forward_int__std::remove_reference_int_::type_
+11588 [11583] mov rdx, rax
+11591 [11588] mov rsi, qword [rbp - 0x30]
+11595 [11591] mov rax, qword [rbp - 0x28]
+11599 [11595] mov rcx, r12
+11602 [11599] mov rdi, rax
+11605 [11602] call rbx
+11607 [11605] nop
+11608 [11607] mov rax, qword [rbp - 0x18]
+11612 [11608] sub rax, qword fs:[0x28]
+11621 [11612] je 0x2d6c
+11623 [11621] call sym.imp.__stack_chk_fail
+11628 [11623] mov rax, qword [rbp - 0x28]
+11632 [11628] add rsp, 0x30
+11636 [11632] pop rbx
+11637 [11636] pop r12
+11639 [11637] pop rbp
+11640 [11639] ret
+**END: CFG
+
+**FUNC: method.bool___gnu_cxx::operator__int__std::vector_int__std.allocator_int________gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int______const____gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int______const_
+**BEGIN: CFG
+11366 [] endbr64
+11370 [11366] push rbp
+11371 [11370] mov rbp, rsp
+11374 [11371] push rbx
+11375 [11374] sub rsp, 0x18
+11379 [11375] mov qword [rbp - 0x18], rdi
+11383 [11379] mov qword [rbp - 0x20], rsi
+11387 [11383] mov rax, qword [rbp - 0x18]
+11391 [11387] mov rdi, rax
+11394 [11391] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.base___const
+11399 [11394] mov rbx, qword [rax]
+11402 [11399] mov rax, qword [rbp - 0x20]
+11406 [11402] mov rdi, rax
+11409 [11406] call method.__gnu_cxx::__normal_iterator_int__std::vector_int__std::allocator_int_____.base___const
+11414 [11409] mov rax, qword [rax]
+11417 [11414] cmp rbx, rax
+11420 [11417] setne al
+11423 [11420] mov rbx, qword [rbp - 8]
+11427 [11423] leave
+11428 [11427] ret
+**END: CFG
+
+**FUNC: method.std::allocator_traits_std::allocator_int___.allocate_std::allocator_int___unsigned_long_
+**BEGIN: CFG
+14150 [] endbr64
+14154 [14150] push rbp
+14155 [14154] mov rbp, rsp
+14158 [14155] sub rsp, 0x10
+14162 [14158] mov qword [rbp - 8], rdi
+14166 [14162] mov qword [rbp - 0x10], rsi
+14170 [14166] mov rcx, qword [rbp - 0x10]
+14174 [14170] mov rax, qword [rbp - 8]
+14178 [14174] mov edx, 0
+14183 [14178] mov rsi, rcx
+14186 [14183] mov rdi, rax
+14189 [14186] call method.__gnu_cxx::new_allocator_int_.allocate_unsigned_long__void_const_
+14194 [14189] leave
+14195 [14194] ret
+**END: CFG
+
+**FUNC: method.std::vector_int__std::allocator_int___.size___const
+**BEGIN: CFG
+10908 [] endbr64
+10912 [10908] push rbp
+10913 [10912] mov rbp, rsp
+10916 [10913] mov qword [rbp - 8], rdi
+10920 [10916] mov rax, qword [rbp - 8]
+10924 [10920] mov rdx, qword [rax + 8]
+10928 [10924] mov rax, qword [rbp - 8]
+10932 [10928] mov rcx, qword [rax]
+10935 [10932] mov rax, rdx
+10938 [10935] sub rax, rcx
+10941 [10938] sar rax, 2
+10945 [10941] pop rbp
+10946 [10945] ret
+**END: CFG
+
+**FUNC: sym.imp.std::__throw_bad_function_call__
+**BEGIN: CFG
+4464 [] endbr64
+4468 [4464] bnd jmp qword [method.std.__throw_bad_function_call__]
+**END: CFG
+
+**FUNC: sym.imp.std::ios_base::sync_with_stdio_bool_
+**BEGIN: CFG
+4480 [] endbr64
+4484 [4480] bnd jmp qword [method.std::ios_base.sync_with_stdio_bool_]
+**END: CFG
+
+**FUNC: sym.imp.std::__throw_length_error_char_const_
+**BEGIN: CFG
+4496 [] endbr64
+4500 [4496] bnd jmp qword [method.std.__throw_length_error_char_const_]
+**END: CFG
+
+**FUNC: sym.imp.std::ostream::operator___long_long_
+**BEGIN: CFG
+4512 [] endbr64
+4516 [4512] bnd jmp qword [method.std::ostream.operator___long_long_]
+**END: CFG
+
+**FUNC: sym.imp.std::istream::operator___int_
+**BEGIN: CFG
+4528 [] endbr64
+4532 [4528] bnd jmp qword [method.std::istream.operator___int_]
+**END: CFG
+
+**FUNC: sym.imp.std::basic_ios_char__std::char_traits_char___::tie_std::ostream_
+**BEGIN: CFG
+4544 [] endbr64
+4548 [4544] bnd jmp qword [method.std::basic_ios_char__std::char_traits_char___.tie_std::ostream_]
+**END: CFG
+
+**FUNC: method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+**BEGIN: CFG
+4592 [] endbr64
+4596 [4592] bnd jmp qword [reloc.std::basic_ostream_char__std::char_traits_char____std::operator____std::char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_]
+**END: CFG
+
+**FUNC: sym.imp.std::ostream::operator___std::ostream____std::ostream__
+**BEGIN: CFG
+4640 [] endbr64
+4644 [4640] bnd jmp qword [method.std::ostream.operator___std::ostream____std::ostream__]
+**END: CFG
+
+**FUNC: sym.imp.std::ostream::operator___int_
+**BEGIN: CFG
+4704 [] endbr64
+4708 [4704] bnd jmp qword [method.std::ostream.operator___int_]
+**END: CFG
+
+**FUNC: fcn.00001030
+**BEGIN: CFG
+4128 [] push qword [0x00006f28]
+4134 [4128] bnd jmp qword [0x00006f30]
+4144 [4134] endbr64
+4148 [4144] push 0
+4153 [4148] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001040
+**BEGIN: CFG
+4160 [] endbr64
+4164 [4160] push 1
+4169 [4164] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001050
+**BEGIN: CFG
+4176 [] endbr64
+4180 [4176] push 2
+4185 [4180] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001060
+**BEGIN: CFG
+4192 [] endbr64
+4196 [4192] push 3
+4201 [4196] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001070
+**BEGIN: CFG
+4208 [] endbr64
+4212 [4208] push 4
+4217 [4212] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001080
+**BEGIN: CFG
+4224 [] endbr64
+4228 [4224] push 5
+4233 [4228] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001090
+**BEGIN: CFG
+4240 [] endbr64
+4244 [4240] push 6
+4249 [4244] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.000010a0
+**BEGIN: CFG
+4256 [] endbr64
+4260 [4256] push 7
+4265 [4260] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.000010b0
+**BEGIN: CFG
+4272 [] endbr64
+4276 [4272] push 8
+4281 [4276] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.000010c0
+**BEGIN: CFG
+4288 [] endbr64
+4292 [4288] push 9
+4297 [4292] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.000010d0
+**BEGIN: CFG
+4304 [] endbr64
+4308 [4304] push 0xa
+4313 [4308] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.000010e0
+**BEGIN: CFG
+4320 [] endbr64
+4324 [4320] push 0xb
+4329 [4324] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.000010f0
+**BEGIN: CFG
+4336 [] endbr64
+4340 [4336] push 0xc
+4345 [4340] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001100
+**BEGIN: CFG
+4352 [] endbr64
+4356 [4352] push 0xd
+4361 [4356] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001110
+**BEGIN: CFG
+4368 [] endbr64
+4372 [4368] push 0xe
+4377 [4372] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001120
+**BEGIN: CFG
+4384 [] endbr64
+4388 [4384] push 0xf
+4393 [4388] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001130
+**BEGIN: CFG
+4400 [] endbr64
+4404 [4400] push 0x10
+4409 [4404] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001140
+**BEGIN: CFG
+4416 [] endbr64
+4420 [4416] push 0x11
+4425 [4420] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001ca8
+**BEGIN: CFG
+7336 [] endbr64
+7340 [7336] mov rbx, rax
+7343 [7340] lea rax, [rbp - 0x30]
+7347 [7343] mov rdi, rax
+7350 [7347] call fcn.00002ae4
+7355 [7350] mov rax, rbx
+7358 [7355] mov rdi, rax
+7361 [7358] call sym.imp._Unwind_Resume
+7366 [7361] endbr64
+7370 [7366] mov rbx, rax
+7373 [7370] lea rax, [rbp - 0x30]
+7377 [7373] mov rdi, rax
+7380 [7377] call fcn.00002ae4
+7385 [7380] jmp 0x1d0f
+7439 [7385] lea rax, [rbp - 0x90]
+7446 [7439] mov rdi, rax
+7449 [7446] call method.std::vector_long_long__std::allocator_long_long___.vector__
+7454 [7449] mov rax, rbx
+7457 [7454] mov rdi, rax
+7460 [7457] call sym.imp._Unwind_Resume
+**END: CFG
+
+**FUNC: fcn.00001cf0
+**BEGIN: CFG
+7408 [] endbr64
+7412 [7408] mov rbx, rax
+7415 [7412] lea rax, [rbp - 0x50]
+7419 [7415] mov rdi, rax
+7422 [7419] call method.std::vector_long_long__std::allocator_long_long___.vector__
+7427 [7422] lea rax, [rbp - 0x70]
+7431 [7427] mov rdi, rax
+7434 [7431] call method.std::vector_long_long__std::allocator_long_long___.vector__
+**END: CFG
+
+**FUNC: fcn.00002238
+**BEGIN: CFG
+8760 [] endbr64
+8764 [8760] mov rbx, rax
+8767 [8764] mov rax, qword [rbp - 0x18]
+8771 [8767] mov rdi, rax
+8774 [8771] call fcn.000027be
+8779 [8774] mov rax, rbx
+8782 [8779] mov rdi, rax
+8785 [8782] call sym.imp._Unwind_Resume
+**END: CFG
+

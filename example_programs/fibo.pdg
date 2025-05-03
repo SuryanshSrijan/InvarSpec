@@ -1,0 +1,277 @@
+**FUNC: sym.imp.__cxa_atexit
+**BEGIN: CFG
+4272 [] endbr64
+4276 [4272] bnd jmp qword [reloc.__cxa_atexit]
+**END: CFG
+
+**FUNC: sym.imp.__stack_chk_fail
+**BEGIN: CFG
+4304 [] endbr64
+4308 [4304] bnd jmp qword [reloc.__stack_chk_fail]
+**END: CFG
+
+**FUNC: entry0
+**BEGIN: CFG
+4352 [] endbr64
+4356 [4352] xor ebp, ebp
+4358 [4356] mov r9, rdx
+4361 [4358] pop rsi
+4362 [4361] mov rdx, rsp
+4365 [4362] and rsp, 0xfffffffffffffff0
+4369 [4365] push rax
+4370 [4369] push rsp
+4371 [4370] xor r8d, r8d
+4374 [4371] xor ecx, ecx
+4376 [4374] lea rdi, [main]
+4383 [4376] call qword [reloc.__libc_start_main]
+**END: CFG
+
+**FUNC: sym.deregister_tm_clones
+**BEGIN: CFG
+4400 [] lea rdi, [loc._edata]
+4407 [4400] lea rax, [loc._edata]
+4414 [4407] cmp rax, rdi
+4417 [4414] je 0x1158
+4419 [4417] mov rax, qword [reloc._ITM_deregisterTMCloneTable]
+4426 [4419] test rax, rax
+4429 [4426] je 0x1158
+4431 [4429] jmp rax
+4440 [4431] ret
+**END: CFG
+
+**FUNC: sym.register_tm_clones
+**BEGIN: CFG
+4448 [] lea rdi, [loc._edata]
+4455 [4448] lea rsi, [loc._edata]
+4462 [4455] sub rsi, rdi
+4465 [4462] mov rax, rsi
+4468 [4465] shr rsi, 0x3f
+4472 [4468] sar rax, 3
+4476 [4472] add rsi, rax
+4479 [4476] sar rsi, 1
+4482 [4479] je 0x1198
+4484 [4482] mov rax, qword [reloc._ITM_registerTMCloneTable]
+4491 [4484] test rax, rax
+4494 [4491] je 0x1198
+4496 [4494] jmp rax
+4504 [4496] ret
+**END: CFG
+
+**FUNC: entry.fini0
+**BEGIN: CFG
+4512 [] endbr64
+4516 [4512] cmp byte [obj.completed.0], 0
+4523 [4516] jne 0x11d8
+4525 [4523] push rbp
+4526 [4525] cmp qword [reloc.__cxa_finalize], 0
+4534 [4526] mov rbp, rsp
+4537 [4534] je 0x11c7
+4539 [4537] mov rdi, qword [obj.__dso_handle]
+4546 [4539] call fcn.00001090
+4551 [4546] call sym.deregister_tm_clones
+4556 [4551] mov byte [obj.completed.0], 1
+4563 [4556] pop rbp
+4564 [4563] ret
+4568 [4564] ret
+**END: CFG
+
+**FUNC: fcn.00001090
+**BEGIN: CFG
+4240 [] endbr64
+4244 [4240] bnd jmp qword [reloc.__cxa_finalize]
+**END: CFG
+
+**FUNC: entry.init0
+**BEGIN: CFG
+4576 [] endbr64
+4580 [4576] jmp sym.register_tm_clones
+**END: CFG
+
+**FUNC: sym.__static_initialization_and_destruction_0_int__int_
+**BEGIN: CFG
+4769 [] endbr64
+4773 [4769] push rbp
+4774 [4773] mov rbp, rsp
+4777 [4774] sub rsp, 0x10
+4781 [4777] mov dword [rbp - 4], edi
+4784 [4781] mov dword [rbp - 8], esi
+4787 [4784] cmp dword [rbp - 4], 1
+4791 [4787] jne 0x12f4
+4793 [4791] cmp dword [rbp - 8], 0xffff
+4800 [4793] jne 0x12f4
+4802 [4800] lea rax, obj.std::__ioinit
+4809 [4802] mov rdi, rax
+4812 [4809] call sym.imp.std::ios_base::Init::Init__
+4817 [4812] lea rax, obj.__dso_handle
+4824 [4817] mov rdx, rax
+4827 [4824] lea rax, obj.std::__ioinit
+4834 [4827] mov rsi, rax
+4837 [4834] mov rax, qword [method.std::ios_base::Init.Init__]
+4844 [4837] mov rdi, rax
+4847 [4844] call sym.imp.__cxa_atexit
+4852 [4847] nop
+4853 [4852] leave
+4854 [4853] ret
+**END: CFG
+
+**FUNC: sym.imp.std::ios_base::Init::Init__
+**BEGIN: CFG
+4320 [] endbr64
+4324 [4320] bnd jmp qword [_ZNSt8ios_base4InitC1Ev]
+**END: CFG
+
+**FUNC: entry.init1
+**BEGIN: CFG
+4855 [] endbr64
+4859 [4855] push rbp
+4860 [4859] mov rbp, rsp
+4863 [4860] mov esi, 0xffff
+4868 [4863] mov edi, 1
+4873 [4868] call sym.__static_initialization_and_destruction_0_int__int_
+4878 [4873] pop rbp
+4879 [4878] ret
+**END: CFG
+
+**FUNC: main
+**BEGIN: CFG
+4648 [] endbr64
+4652 [4648] push rbp
+4653 [4652] mov rbp, rsp
+4656 [4653] sub rsp, 0x10
+4660 [4656] mov rax, qword fs:[0x28]
+4669 [4660] mov qword [rbp - 8], rax
+4673 [4669] xor eax, eax
+4675 [4673] lea rax, [rbp - 0xc]
+4679 [4675] mov rsi, rax
+4682 [4679] lea rax, [obj.std::cin]
+4689 [4682] mov rdi, rax
+4692 [4689] call sym.imp.std::istream::operator___int_
+4697 [4692] mov eax, dword [rbp - 0xc]
+4700 [4697] mov edi, eax
+4702 [4700] call sym.fibo_int_
+4707 [4702] mov esi, eax
+4709 [4707] lea rax, [obj.std::cout]
+4716 [4709] mov rdi, rax
+4719 [4716] call sym.imp.std::ostream::operator___int_
+4724 [4719] mov rdx, qword [reloc.std::basic_ostream_char__std::char_traits_char____std::endl_char__std::char_traits_char____std::basic_ostream_char__std::char_traits_char____]
+4731 [4724] mov rsi, rdx
+4734 [4731] mov rdi, rax
+4737 [4734] call sym.imp.std::ostream::operator___std::ostream____std::ostream__
+4742 [4737] mov eax, 0
+4747 [4742] mov rdx, qword [rbp - 8]
+4751 [4747] sub rdx, qword fs:[0x28]
+4760 [4751] je 0x129f
+4762 [4760] call sym.imp.__stack_chk_fail
+4767 [4762] leave
+4768 [4767] ret
+**END: CFG
+
+**FUNC: sym.imp.std::istream::operator___int_
+**BEGIN: CFG
+4256 [] endbr64
+4260 [4256] bnd jmp qword [method.std::istream.operator___int_]
+**END: CFG
+
+**FUNC: sym.fibo_int_
+**BEGIN: CFG
+4585 [] endbr64
+4589 [4585] push rbp
+4590 [4589] mov rbp, rsp
+4593 [4590] push rbx
+4594 [4593] sub rsp, 0x18
+4598 [4594] mov dword [rbp - 0x14], edi
+4601 [4598] cmp dword [rbp - 0x14], 1
+4605 [4601] jg 0x1204
+4607 [4605] mov eax, dword [rbp - 0x14]
+4610 [4607] jmp 0x1222
+4612 [] mov eax, dword [rbp - 0x14]
+4615 [4612] sub eax, 2
+4618 [4615] mov edi, eax
+4620 [4618] call sym.fibo_int_
+4625 [4620] mov ebx, eax
+4627 [4625] mov eax, dword [rbp - 0x14]
+4630 [4627] sub eax, 1
+4633 [4630] mov edi, eax
+4635 [4633] call sym.fibo_int_
+4640 [4635] add eax, ebx
+4642 [4610 4640] mov rbx, qword [rbp - 8]
+4646 [4642] leave
+4647 [4646] ret
+**END: CFG
+
+**FUNC: sym.imp.std::ostream::operator___int_
+**BEGIN: CFG
+4336 [] endbr64
+4340 [4336] bnd jmp qword [method.std::ostream.operator___int_]
+**END: CFG
+
+**FUNC: sym.imp.std::ostream::operator___std::ostream____std::ostream__
+**BEGIN: CFG
+4288 [] endbr64
+4292 [4288] bnd jmp qword [method.std::ostream.operator___std::ostream____std::ostream__]
+**END: CFG
+
+**FUNC: sym._fini
+**BEGIN: CFG
+4880 [] endbr64
+4884 [4880] sub rsp, 8
+4888 [4884] add rsp, 8
+4892 [4888] ret
+**END: CFG
+
+**FUNC: sym._init
+**BEGIN: CFG
+4096 [] endbr64
+4100 [4096] sub rsp, 8
+4104 [4100] mov rax, qword [reloc.__gmon_start__]
+4111 [4104] test rax, rax
+4114 [4111] je 0x1016
+4116 [4114] call rax
+4118 [4116] add rsp, 8
+4122 [4118] ret
+**END: CFG
+
+**FUNC: fcn.00001030
+**BEGIN: CFG
+4128 [] push qword [0x00003f88]
+4134 [4128] bnd jmp qword [0x00003f90]
+4144 [4134] endbr64
+4148 [4144] push 0
+4153 [4148] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001040
+**BEGIN: CFG
+4160 [] endbr64
+4164 [4160] push 1
+4169 [4164] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001050
+**BEGIN: CFG
+4176 [] endbr64
+4180 [4176] push 2
+4185 [4180] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001060
+**BEGIN: CFG
+4192 [] endbr64
+4196 [4192] push 3
+4201 [4196] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001070
+**BEGIN: CFG
+4208 [] endbr64
+4212 [4208] push 4
+4217 [4212] bnd jmp section..plt
+**END: CFG
+
+**FUNC: fcn.00001080
+**BEGIN: CFG
+4224 [] endbr64
+4228 [4224] push 5
+4233 [4228] bnd jmp section..plt
+**END: CFG
+
